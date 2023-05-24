@@ -1,0 +1,37 @@
+.dateRangeContainer {
+  border-radius: 4px;
+  &.focus {
+    border-color: var(--blue);
+  }
+}
+.darkBorder {
+  border: 1px solid var(--dark-purple);
+}
+.lightBorder {
+  border: 1px solid var(--medium-purple);
+}
+.selectedText {
+  width: 100%;
+  font-size: var(--font-size-xs);
+}
+.datepickerSearchButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 8px;
+}
+.dateRangeTippy {
+  :global(.DateRangePickerInput) {
+    padding: 0;
+  }
+
+  :global(button.DateRangePickerInput_calendarIcon.DateRangePickerInput_calendarIcon_1) {
+    right: 0;
+  }
+}
+.buttonStyle {
+  width: 100%;
+}
+.tippyWidthOverride {
+  max-width: 100% !important; //Overridden tippy width as it was default 350px which was breaking on UI
+}

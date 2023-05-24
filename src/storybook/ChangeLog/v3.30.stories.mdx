@@ -1,0 +1,117 @@
+<!--ATTENTION -->
+<!--When updating this file, please add the newest comments at the top of the file so they are displayed first -->
+<!--Changes should include any functional changes made to the component and how that affects the component/function usage -->
+<!--or changes made to the Types (and what effect that will have for the component/function) -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+
+<Meta
+  title='ChangeLog/3.30'
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<!-- INSERT NEW UPDATE HERE -->
+<!-- Include date, version & the change and it's functional effects -->
+
+**16-May-2023**
+
+### 3.30.8
+
+Updated the base Sparkline chart to use similar params as the SparklineWithTooltip component.
+The Sparkline chart is a separate component that does not have the tooltip feature. It is
+just a display component. Still WIP until tested.
+
+[Sparkline](/story/wip-sparkline--default)
+
+Updated the mobile display for the SparklineWithTooltip component. When this component is
+displayed on a mobile device it will open a sideDrawer instead of the popover component. This
+will make the display more standard on mobile devices.
+
+[SparklineWithTooltip](/story/components-charts-sparkline-with-tooltip--default)
+
+---
+
+**11-May-2023**
+
+### 3.30.7
+
+Added an `equalColumnWidth` optional prop to `StandardTable` for adding a minimum equal width across table columns.
+
+[StandardTable](/story/components-tables-standardtable--basic-table)
+
+---
+
+**09-May-2023**
+
+### 3.30.6
+
+Added a `regularFont` prop to `TextUnderline` for non-bold options when using the component.
+
+[TextUnderline](/story/components-textunderline--regular-font)
+
+---
+
+**05-May-2023**
+
+### 3.30.5
+
+Removing the old `TimeframeFilter` and renaming the newer `TimeframeFilterNew` to `TimeframeFilter`.
+
+[TimeframeFilter](/story/components-timeframe-timeframefilter--default-timeframe)
+
+---
+
+**04-May-2023**
+
+### 3.30.4
+
+Add a `SecondaryDisplay` prop which is add a JSX component to the `SparklineWithTooltip` display.
+If no SecondaryDisplay prop is provided then the tooltip will display only the initial graph. But
+if a SecondaryDisplay prop is provided then the tooltip will display the additional component in
+a side container and will dynamically adjust the size of the tooltip to accommodate the new component.
+For mobile the graph and the new component will stack vertically.
+
+[Sparkline Tooltip with Secondary Display](/docs/components-charts-sparkline-with-tooltip--secondary-display)
+
+---
+
+**01-May-2023**
+
+### 3.30.3
+
+Removed the `callout` prop from `Icon`. In an order to help with accessibility, our standards are to wrap a `Button` around an `Icon` if we need a callout for the `Icon`. This is has been adopted in more recent implementations. We are enforcing this standard with this update.
+
+[Icon](/story/components-icon--icon)
+
+### 3.30.2
+
+Added a third option to the prop `size` for `InfoTooltip`. The new option, `standard`, will be the default `size`. We added this prop to help with our CSS encapsulation task.
+
+[InfoTooltip](/story/components-tooltips-infotooltip--basic)
+
+---
+
+**21-April-2023**
+
+### 3.30.1
+
+Added an optional prop called `keyUpCallout` to `SearchBar`. This will allow an action to be taken up pressing "return" or "enter" on the keyboard.
+
+[SearchBar](/story/components-searchbar--key-up)
+
+---
+
+**20-April-2023**
+
+### 3.30.0
+
+Created the `CustomizeTableColumns` component. This will replace the `CustomDisplay` that the tables are currently using to customize their columns. This component makes use of a `SideDrawer` and the exposed version of `MultipleSelection`. The same `customColumnProps` are being used so no changes are necessary to the current experience.
+
+[StandardTable - Customize Columns](/story/components-tables-standardtable--customize-columns)
+
+---

@@ -1,0 +1,19 @@
+// We need to use !important here because the react-switch library that we are using for the Switch has inline styling. This is how we are overriding those styles.
+.switch {
+  :global .react-switch-handle {
+    top: -2px !important;
+    border: 2px solid var(--medium-gray) !important;
+  }
+  :global .react-switch-bg {
+    background: var(--medium-gray) !important;
+  }
+}
+.on {
+  :global .react-switch-handle {
+    border: 2px solid var(--blue) !important;
+    transform: translateX(15px) !important;
+  }
+  :global .react-switch-bg {
+    background: var(--blue) !important;
+  }
+}

@@ -1,0 +1,246 @@
+.dropdown-box {
+  position: absolute;
+  top: 40px;
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  z-index: 30;
+  @include border-radius;
+  @include box-shadow(0px, 3px, 6px, $color: rgba(0, 0, 0, 0.16));
+  &::after,
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  &.select {
+    top: unset;
+    margin-top: 3px;
+  }
+  &.open {
+    @include transition;
+  }
+  &.top {
+    top: var(--dropdownHeight);
+    margin-top: 0;
+    &::after {
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      border-top: 11px solid var(--white);
+      left: 21px;
+      bottom: -11px;
+    }
+    &::before {
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid var(--light-gray);
+      left: 20px;
+      bottom: -12px;
+    }
+    &.extraItem {
+      &::after {
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-top: 11px solid var(--lighter-gray);
+        left: 21px;
+        bottom: -11px;
+      }
+    }
+    &.company {
+      top: var(--dropdownHeight);
+      &::after {
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-top: 11px solid var(--lighter-gray);
+        left: 21px;
+        bottom: -60px;
+      }
+      &::before {
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid var(--light-gray);
+        left: 20px;
+        bottom: -61px;
+      }
+    }
+  }
+  &.down {
+    &::after {
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      border-bottom: 11px solid var(--white);
+      left: 21px;
+      top: -11px;
+    }
+    &::before {
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 12px solid var(--light-gray);
+      left: 20px;
+      top: -12px;
+    }
+    &.gray {
+      &::after {
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid var(--lighter-gray);
+        left: 21px;
+        top: -11px;
+      }
+      &::before {
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid var(--light-gray);
+        left: 20px;
+        top: -12px;
+      }
+    }
+  }
+  &.right {
+    right: 0px;
+    &::after {
+      left: unset;
+      right: 21px;
+    }
+    &::before {
+      left: unset;
+      right: 20px;
+    }
+    &.company,
+    &.extraItem,
+    &.gray {
+      &::after {
+        left: unset;
+        right: 21px;
+      }
+      &::before {
+        left: unset;
+        right: 20px;
+      }
+    }
+  }
+  &.middle {
+    right: -50%;
+    &::after {
+      left: calc(50% - 7px);
+      right: unset;
+    }
+    &::before {
+      left: calc(50% - 8px);
+      right: unset;
+    }
+  }
+  .dropdown {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10px;
+    &.no-padding {
+      padding: 0;
+    }
+    background: var(--white);
+    border-radius: 3px;
+    max-height: 290px;
+    ::-webkit-scrollbar {
+      width: 0px; /* remove scrollbar space */
+      background: transparent;
+    }
+    -ms-overflow-style: none; // IE 10+
+    overflow: -moz-scrollbars-none; // Firefox
+    &.unset-height {
+      height: unset;
+      max-height: unset;
+    }
+  }
+  &.company,
+  &.extraItem {
+    @include border-radius(4px 4px 0 0);
+  }
+  .dropdown-options-container {
+    .dropdown-item {
+      &:first-child {
+        margin-top: 10px !important;
+      }
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  $popoverColors: (
+    purple: (
+      var(--purple),
+    ),
+    red: (
+      var(--red),
+    ),
+    green: (
+      var(--green),
+    ),
+    blue: (
+      var(--blue),
+    ),
+    yellow: (
+      var(--yellow),
+    ),
+  );
+  @each $key, $val in $popoverColors {
+    $color: nth($val, 1);
+    &.#{'' + $key} {
+      &.dropdown-box {
+        &.top {
+          &:after {
+            border-top: 11px solid $color;
+          }
+        }
+        &.down {
+          &:after {
+            border-bottom: 11px solid $color;
+          }
+        }
+        button {
+          &.btn-popover-primary {
+            color: $color;
+            background: var(--white);
+            border-color: var(--white);
+          }
+          &.btn-popover-secondary {
+            color: var(--white);
+            background: $color;
+            border-color: var(--white);
+          }
+        }
+      }
+      .dropdown {
+        background: $color;
+        color: var(--white);
+      }
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-xxl) {
+    .dropdown {
+      max-height: 350px;
+    }
+  }
+
+  // Added for mobile popover , styles are added based on some responsive testing
+  &.mobile-popover {
+    height: calc(var(--100vh) - 5px);
+    width: calc(100vw - 5px);
+    top: -22px;
+    &::after,
+    &::before {
+      content: none;
+    }
+    &.right {
+      right: -38px;
+    }
+    .dropdown {
+      padding: 0px;
+    }
+  }
+  &.banner-display.mobile-popover {
+    position: fixed;
+    top: 0;
+  }
+}

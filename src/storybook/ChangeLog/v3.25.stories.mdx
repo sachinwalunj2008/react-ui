@@ -1,0 +1,44 @@
+<!--ATTENTION -->
+<!--When updating this file, please add the newest comments at the top of the file so they are displayed first -->
+<!--Changes should include any functional changes made to the component and how that affects the component/function usage -->
+<!--or changes made to the Types (and what effect that will have for the component/function) -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+
+<Meta
+  title='ChangeLog/3.25'
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<!-- INSERT NEW UPDATE HERE -->
+<!-- Include date, version & the change and it's functional effects -->
+
+**23-Jan-2023**
+
+### 3.25.1
+
+Showing Tooltip for disabled actions in MenuButton component
+
+[MenuButton](/story/components-menubutton--disabled-menu-actions-with-tooltip)
+
+---
+
+**20-Jan-2023**
+
+### 3.25.0
+
+Created the new `InformationPane` component. This component allows the flexibility of using custom children elements (per design requirements). It is recommended to use the components that are available in the `InformationPane.tsx` file for design consistency:
+
+`<InformationPane.ImageAndName />`
+`<InformationPane.Section />`
+`<InformationPane.CustomSection />`
+`<InformationPane.Divider />`
+
+[InformationPane](/story/components-informationpane--basic)
+
+---

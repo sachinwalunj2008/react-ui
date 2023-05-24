@@ -1,0 +1,243 @@
+@mixin add-css-variable($name, $value) {
+  $prefix: '--';
+  #{$prefix + $name}: $value;
+}
+:root {
+  // Shadow Color
+  @include add-css-variable('button-shadow-color', rgba(0, 0, 0, 0.15));
+
+  // White Gradient Fade
+  @include add-css-variable(
+    'white-gradient-color',
+    linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 26%)
+  );
+
+  //// MAIN COLORS ////
+
+  // BLUES
+  @include add-css-variable('blue', #009af0);
+  @include add-css-variable('dark-blue', #1e6995);
+  @include add-css-variable('medium-blue', #76cbe9);
+  @include add-css-variable('light-blue', #f5fbff);
+
+  // GREENS
+  @include add-css-variable('green', #46deba);
+  @include add-css-variable('dark-green', #20a382);
+  @include add-css-variable('medium-green', #91f4e0);
+  @include add-css-variable('light-green', #f5fff9);
+
+  // REDS
+  @include add-css-variable('red', #f27873);
+  @include add-css-variable('dark-red', #ad5350);
+  @include add-css-variable('medium-red', #ffbab7);
+  @include add-css-variable('light-red', #fff5f5);
+
+  // YELLOWS
+  @include add-css-variable('yellow', #ffe552);
+  @include add-css-variable('dark-yellow', #ffa412);
+  @include add-css-variable('medium-yellow', #f2e8af);
+  @include add-css-variable('light-yellow', #fffef5);
+
+  // PURPLES
+  @include add-css-variable('purple', #8184a9);
+  @include add-css-variable('dark-purple', #1d3261);
+  @include add-css-variable('medium-purple', #d7d8e5);
+  @include add-css-variable('light-purple', #f4f4f8);
+
+  // GRAY SCALE
+  @include add-css-variable('black', #1c1e1f);
+  @include add-css-variable('dark-gray', #36383c);
+  @include add-css-variable('gray', #70757b);
+  @include add-css-variable('medium-gray', #b8bcbf);
+  @include add-css-variable('light-gray', #e7eaeb);
+  @include add-css-variable('lighter-gray', #f8f8f8);
+  @include add-css-variable('faint-gray', #fbfbfb);
+  @include add-css-variable('white', #ffffff);
+
+  // ADVANCED PALETTE
+  @include add-css-variable('lavender', #4859e5);
+  @include add-css-variable('light-lavender', #f7f8ff);
+  @include add-css-variable('orange', #f3be6c);
+  @include add-css-variable('light-orange', #fff9f0);
+  @include add-css-variable('pink', #f869bc);
+  @include add-css-variable('light-pink', #fff5fb);
+  @include add-css-variable('teal', #4ee5ee);
+  @include add-css-variable('light-teal', #f2ffff);
+
+  //// CHART COLOR LIBRARY ////
+
+  // CHART BLUES
+  @include add-css-variable('chart-light-6-blue', #e4f3fa);
+  @include add-css-variable('chart-light-5-blue', #c7dfee);
+  @include add-css-variable('chart-light-4-blue', #a6cce5);
+  @include add-css-variable('chart-light-3-blue', #85badb);
+  @include add-css-variable('chart-light-2-blue', #63a7d1);
+  @include add-css-variable('chart-light-1-blue', #4194c7);
+  @include add-css-variable('chart-standard-blue', #2081be);
+  @include add-css-variable('chart-dark-1-blue', #1b6da1);
+  @include add-css-variable('chart-dark-2-blue', #165984);
+  @include add-css-variable('chart-dark-3-blue', #114667);
+  @include add-css-variable('chart-dark-4-blue', #0c334b);
+  @include add-css-variable('chart-dark-5-blue', #08202f);
+
+  // CHART REDS
+  @include add-css-variable('chart-light-6-red', #fde5e5);
+  @include add-css-variable('chart-light-5-red', #fac9c7);
+  @include add-css-variable('chart-light-4-red', #f7a8a6);
+  @include add-css-variable('chart-light-3-red', #f48885);
+  @include add-css-variable('chart-light-2-red', #f16863);
+  @include add-css-variable('chart-light-1-red', #ee4741);
+  @include add-css-variable('chart-standard-red', #ec2720);
+  @include add-css-variable('chart-dark-1-red', #c8211b);
+  @include add-css-variable('chart-dark-2-red', #a41b16);
+  @include add-css-variable('chart-dark-3-red', #811511);
+  @include add-css-variable('chart-dark-4-red', #5e0f0c);
+  @include add-css-variable('chart-dark-5-red', #3b0908);
+
+  // CHART GREENS
+  @include add-css-variable('chart-light-6-green', #e0f8f3);
+  @include add-css-variable('chart-light-5-green', #c0f1e5);
+  @include add-css-variable('chart-light-4-green', #9be8d6);
+  @include add-css-variable('chart-light-3-green', #76e0c7);
+  @include add-css-variable('chart-light-2-green', #51d8b8);
+  @include add-css-variable('chart-light-1-green', #2bcfa8);
+  @include add-css-variable('chart-standard-green', #05c799);
+  @include add-css-variable('chart-dark-1-green', #04a881);
+  @include add-css-variable('chart-dark-2-green', #038a6a);
+  @include add-css-variable('chart-dark-3-green', #026c53);
+  @include add-css-variable('chart-dark-4-green', #014f3c);
+  @include add-css-variable('chart-dark-5-green', #013126);
+
+  // CHART YELLOWS
+  @include add-css-variable('chart-light-6-yellow', #fefae7);
+  @include add-css-variable('chart-light-5-yellow', #fcf6ca);
+  @include add-css-variable('chart-light-4-yellow', #faf1aa);
+  @include add-css-variable('chart-light-3-yellow', #f8eb8b);
+  @include add-css-variable('chart-light-2-yellow', #f7e66c);
+  @include add-css-variable('chart-light-1-yellow', #f5e14c);
+  @include add-css-variable('chart-standard-yellow', #f4dc2c);
+  @include add-css-variable('chart-dark-1-yellow', #ceba25);
+  @include add-css-variable('chart-dark-2-yellow', #a9981e);
+  @include add-css-variable('chart-dark-3-yellow', #857818);
+  @include add-css-variable('chart-dark-4-yellow', #615711);
+  @include add-css-variable('chart-dark-5-yellow', #3d370b);
+
+  // CHART PURPLES
+  @include add-css-variable('chart-light-6-purple', #faeaff);
+  @include add-css-variable('chart-light-5-purple', #ecc5fd);
+  @include add-css-variable('chart-light-4-purple', #e0a3fd);
+  @include add-css-variable('chart-light-3-purple', #d581fc);
+  @include add-css-variable('chart-light-2-purple', #ca5ffb);
+  @include add-css-variable('chart-light-1-purple', #be3cfa);
+  @include add-css-variable('chart-standard-purple', #b319fa);
+  @include add-css-variable('chart-dark-1-purple', #9715d3);
+  @include add-css-variable('chart-dark-2-purple', #7c11ad);
+  @include add-css-variable('chart-dark-3-purple', #610d88);
+  @include add-css-variable('chart-dark-4-purple', #470963);
+  @include add-css-variable('chart-dark-5-purple', #2c063e);
+
+  // CHART ROYALS
+  @include add-css-variable('chart-light-6-royal', #e5e5f8);
+  @include add-css-variable('chart-light-5-royal', #cac6f3);
+  @include add-css-variable('chart-light-4-royal', #aba5eb);
+  @include add-css-variable('chart-light-3-royal', #8c83e4);
+  @include add-css-variable('chart-light-2-royal', #6d62dd);
+  @include add-css-variable('chart-light-1-royal', #4d40d6);
+  @include add-css-variable('chart-standard-royal', #2e1ecf);
+  @include add-css-variable('chart-dark-1-royal', #2619af);
+  @include add-css-variable('chart-dark-2-royal', #1f148f);
+  @include add-css-variable('chart-dark-3-royal', #191071);
+  @include add-css-variable('chart-dark-4-royal', #120b52);
+  @include add-css-variable('chart-dark-5-royal', #0b0733);
+
+  // CHART TEALS
+  @include add-css-variable('chart-light-6-teal', #e3ffff);
+  @include add-css-variable('chart-light-5-teal', #bff4f7);
+  @include add-css-variable('chart-light-4-teal', #99eef2);
+  @include add-css-variable('chart-light-3-teal', #73e8ed);
+  @include add-css-variable('chart-light-2-teal', #4de1e8);
+  @include add-css-variable('chart-light-1-teal', #26dbe3);
+  @include add-css-variable('chart-standard-teal', #00d5df);
+  @include add-css-variable('chart-dark-1-teal', #00b4bd);
+  @include add-css-variable('chart-dark-2-teal', #00949b);
+  @include add-css-variable('chart-dark-3-teal', #007479);
+  @include add-css-variable('chart-dark-4-teal', #005458);
+  @include add-css-variable('chart-dark-5-teal', #003537);
+
+  // CHART PINKS
+  @include add-css-variable('chart-light-6-pink', #ffe3f2);
+  @include add-css-variable('chart-light-5-pink', #ffbfe5);
+  @include add-css-variable('chart-light-4-pink', #ff99d6);
+  @include add-css-variable('chart-light-3-pink', #ff73c7);
+  @include add-css-variable('chart-light-2-pink', #ff4db8);
+  @include add-css-variable('chart-light-1-pink', #ff26a8);
+  @include add-css-variable('chart-standard-pink', #ff0099);
+  @include add-css-variable('chart-dark-1-pink', #d80081);
+  @include add-css-variable('chart-dark-2-pink', #b1006a);
+  @include add-css-variable('chart-dark-3-pink', #8b0053);
+  @include add-css-variable('chart-dark-4-pink', #65003c);
+  @include add-css-variable('chart-dark-5-pink', #3f0026);
+
+  // CHART ORANGES
+  @include add-css-variable('chart-light-6-orange', #fff1e7);
+  @include add-css-variable('chart-light-5-orange', #ffe2ca);
+  @include add-css-variable('chart-light-4-orange', #ffd1aa);
+  @include add-css-variable('chart-light-3-orange', #ffc08b);
+  @include add-css-variable('chart-light-2-orange', #ffaf6b);
+  @include add-css-variable('chart-light-1-orange', #ffa252);
+  @include add-css-variable('chart-standard-orange', #ff8d2b);
+  @include add-css-variable('chart-dark-1-orange', #d87724);
+  @include add-css-variable('chart-dark-2-orange', #b1621d);
+  @include add-css-variable('chart-dark-3-orange', #8b4d17);
+  @include add-css-variable('chart-dark-4-orange', #653811);
+  @include add-css-variable('chart-dark-5-orange', #3f230a);
+
+  // Breakpoints
+  @include add-css-variable('breakpoint-xs', $breakpoint-xs);
+  @include add-css-variable('breakpoint-sm', $breakpoint-sm);
+  @include add-css-variable('breakpoint-md', $breakpoint-md);
+  @include add-css-variable('breakpoint-lg', $breakpoint-lg);
+  @include add-css-variable('breakpoint-xl', $breakpoint-xl);
+  @include add-css-variable('breakpoint-xxl', $breakpoint-xxl);
+
+  @include add-css-variable('breakpoint-xs-max', $breakpoint-xs-max);
+  @include add-css-variable('breakpoint-sm-max', $breakpoint-sm-max);
+  @include add-css-variable('breakpoint-md-max', $breakpoint-md-max);
+  @include add-css-variable('breakpoint-lg-max', $breakpoint-lg-max);
+  @include add-css-variable('breakpoint-xl-max', $breakpoint-xl-max);
+
+  // Font Weights
+  @include add-css-variable('font-weight-light', $font-weight-light);
+  @include add-css-variable('font-weight-regular', $font-weight-regular);
+  @include add-css-variable('font-weight-lightbold', $font-weight-lightbold);
+  @include add-css-variable('font-weight-semibold', $font-weight-semibold);
+  @include add-css-variable('font-weight-bold', $font-weight-bold);
+  @include add-css-variable('font-weight-extra-bold', $font-weight-extra-bold);
+
+  // Font Sizes
+  @include add-css-variable('font-size-h1', $font-size-h1);
+  @include add-css-variable('font-size-h2', $font-size-h2);
+  @include add-css-variable('font-size-h3', $font-size-h3);
+  @include add-css-variable('font-size-p', $font-size-p);
+  @include add-css-variable('font-size-xs', $font-size-xs);
+  @include add-css-variable('font-size-xxs', $font-size-xxs);
+  @include add-css-variable('font-size-header', $font-size-header);
+  @include add-css-variable('font-size-tag', $font-size-tag);
+  @include add-css-variable('font-size-input', $font-size-input);
+  @include add-css-variable('font-subtab', $font-subtab);
+
+  // Line Height
+  @include add-css-variable('line-height-h1', $line-height-h1);
+  @include add-css-variable('line-height-p', $line-height-p);
+  @include add-css-variable('line-height-sidebar', $line-height-sidebar);
+  @include add-css-variable(
+    'line-height-dropdown-active',
+    $line-height-dropdown-active
+  );
+
+  // Sidebar Full Width
+  // TODO: Make these values dynamic
+  @include add-css-variable('sidebar-full-width', 232px);
+  @include add-css-variable('sidebar-collapsed-width', 72);
+  @include add-css-variable('header-height', 80);
+}

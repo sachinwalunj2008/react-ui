@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 465 705">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #ccc;
+      }
+
+      .cls-2, .cls-8 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #707070;
+      }
+
+      .cls-3 {
+        fill: #f7f7f7;
+      }
+
+      .cls-4, .cls-6 {
+        fill: #383838;
+        font-family: Helvetica-Light, Helvetica;
+        font-weight: 300;
+      }
+
+      .cls-4 {
+        font-size: 12px;
+      }
+
+      .cls-5 {
+        fill: #707070;
+      }
+
+      .cls-6 {
+        font-size: 14px;
+      }
+
+      .cls-7 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_164" data-name="Group 164" transform="translate(-311 -262)">
+    <g id="Rectangle_439" data-name="Rectangle 439" class="cls-1" transform="translate(389.031 351.1)">
+      <rect class="cls-7" width="319.551" height="582.23"/>
+      <rect class="cls-8" x="0.5" y="0.5" width="318.551" height="581.23"/>
+    </g>
+    <g id="Rectangle_426" data-name="Rectangle 426" class="cls-2" transform="translate(361 266)">
+      <rect class="cls-7" width="375" height="667"/>
+      <rect class="cls-8" x="0.5" y="0.5" width="374" height="666"/>
+    </g>
+    <g id="Rectangle_427" data-name="Rectangle 427" class="cls-3" transform="translate(361 266)">
+      <rect class="cls-7" width="374.867" height="60"/>
+      <rect class="cls-8" x="0.5" y="0.5" width="373.867" height="59"/>
+    </g>
+    <text id="_60px" data-name="60px" class="cls-4" transform="translate(552 302)"><tspan x="-13.338" y="0">60px</tspan></text>
+    <rect id="Rectangle_433" data-name="Rectangle 433" class="cls-5" width="375" height="5" transform="translate(361 266)"/>
+    <text id="_5px" data-name="5px" class="cls-4" transform="translate(322 271)"><tspan x="-10.002" y="0">5px</tspan></text>
+    <line id="Line_61" data-name="Line 61" class="cls-2" x2="17" transform="translate(333.5 267.5)"/>
+    <text id="_100_1_col_2_col_3_col_and_4_col" data-name="100%
+1 col, 2 col, 3 col, and 4 col" class="cls-6" transform="translate(552 585)"><tspan x="-17.899" y="0">100%</tspan><tspan x="-86.387" y="22">1 col, 2 col, 3 col, and 4 col</tspan></text>
+    <text id="_65px" data-name="65px" class="cls-4" transform="translate(753 300)"><tspan x="-13.338" y="0">65px</tspan></text>
+    <line id="Line_69" data-name="Line 69" class="cls-2" x2="17" transform="translate(739.5 266.5)"/>
+    <line id="Line_70" data-name="Line 70" class="cls-2" x2="17" transform="translate(741.5 325.5)"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" class="cls-5" cx="30" cy="30" r="30" transform="translate(637 837)"/>
+    <text id="_30px" data-name="30px" class="cls-4" transform="translate(762 964)"><tspan x="-13.338" y="0">30px</tspan></text>
+    <line id="Line_71" data-name="Line 71" class="cls-2" x2="99" transform="translate(675.5 896.5)"/>
+    <line id="Line_72" data-name="Line 72" class="cls-2" x2="99" transform="translate(698 867) rotate(90)"/>
+    <text id="_20px_all_the_way_around" data-name="20px all the way around" class="cls-4" transform="translate(552 342)"><tspan x="-63.918" y="0">20px all the way around</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+
+<Meta
+  title='ChangeLog/3.7'
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+**10-Jun-2022**
+
+### 3.7.25
+
+Added an optional `footerContent` prop to `SideDrawer`. This will prevent us from creating footer styles for the SideDrawer each time a footer is wanted. Sometimes we may not want the footer, so kept it as optional.
+
+---
+
+**1-Jun-2022**
+
+### 3.7.22
+
+Moved the method that creates Table Groups to a common file and imported into both DesktopTable and MobileTable components. This should improve consistency between the tables in both formats.
+Updated the MobileTable to expand the Group Header if the group header has detailed data to display. The table config will need to handle if the column doesn't have info to display (ex: tags on
+will show a white outline on the gray background by default)
+
+---
+
+**27-May-2022**
+
+### 3.7.21
+
+Update to the `StandardTable` component to include details in the `GroupHeader`
+
+Include the groupHeader data object with the entire data array. The groupHeader object needs to include
+the following prop types:
+
+```javascript
+type GroupHeader = {
+   // TO ADD DETAILS TO GROUP HEADER INCLUDE THE FOLLOWING PROPS ON THE HEADER OBJECT:
+  /** Boolean value; only added to Header rows  */
+  isGroupHeader?: boolean
+  /** Toggle to display header details if header details exist */
+  displayHeaderData?: boolean
+  /** Custom JSX to display in the last column of the table */
+  lastColumn?: React.ReactNode
+  /**
+   * Number to associate the group header with the right group; groups are identified in order
+   * of appearance in the table (index + 1, so the first group is 1, the second is 2, etc.)
+   */
+  groupNum?: number
+}
+```
+
+Example: [Table with Group Header Details](/story/components-tables-standardtable--header-details)

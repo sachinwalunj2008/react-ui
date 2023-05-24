@@ -1,0 +1,322 @@
+@import '../../scss/base/mixins.scss';
+@import '../../scss/base/variables';
+
+.listLoadingWrapper {
+  display: table-caption;
+  caption-side: bottom;
+  margin: 16px 0;
+}
+
+.pillIcon {
+  transition: 0.25s fill ease-in-out;
+}
+
+.caret svg path {
+  stroke: var(--purple);
+  // fill: none;
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+.childRowIcon {
+  opacity: 0.35;
+  width: 10px;
+  margin: 0px 16px;
+}
+
+.firstRowShadow {
+  box-shadow: inset 0px 4px 4px -4px var(--light-gray);
+  &.leftStickyCell {
+    box-shadow: inset 0px 4px 4px -4px var(--light-gray),
+      8px 0px 5px -4px var(--light-gray) !important;
+  }
+  &.rightStickyCell {
+    box-shadow: inset 0px 4px 4px -4px var(--light-gray),
+      -8px 0px 5px -4px var(--light-gray) !important;
+  }
+}
+
+.lastRowShadow {
+  box-shadow: inset 0px -4px 4px -4px var(--light-gray);
+  &.leftStickyCell {
+    box-shadow: inset 0px -4px 4px -4px var(--light-gray),
+      8px 0px 5px -4px var(--light-gray) !important;
+  }
+  &.rightStickyCell {
+    box-shadow: inset 0px -4px 4px -4px var(--light-gray),
+      -8px 0px 5px -4px var(--light-gray) !important;
+  }
+}
+
+.actionItems {
+  width: 18px;
+}
+
+// not for sure that these are needed, but they're here for now
+// for checkboxes that get added in first column
+:global
+  .sticky-table
+  .sticky-table-table
+  .sticky-table-row.sticky-table-header
+  .sticky-table-cell.checkbox_width {
+  width: 18px;
+}
+
+:global
+  .sticky-table
+  .sticky-table-table
+  .sticky-table-row:not(.sticky-table-header)
+  .sticky-table-cell.checkbox_width {
+  width: 18px;
+}
+
+// needed for overriding sticky table styles
+:global .sticky-table {
+  &.show-scrollbar {
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 8px;
+      background: var(--light-purple);
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      box-shadow: inset 0 0 6px var(--purple);
+      background: var(--purple);
+    }
+  }
+  .sticky-table-table {
+    white-space: normal;
+    .sticky-table-row.sticky-table-header .sticky-table-cell {
+      background: var(--white);
+      border-bottom: 2px solid var(--purple);
+      white-space: nowrap;
+    }
+    .sticky-table-row:not(.sticky-table-header) {
+      &:hover {
+        background-color: var(--faint-gray);
+        transition: background-color 0.25s ease-in-out;
+      }
+    }
+    .sticky-table-row:not(.sticky-table-header) {
+      .sticky-table-cell {
+        border-bottom: 1px solid var(--light-gray);
+      }
+      &:last-of-type .sticky-table-cell {
+        border-bottom: none;
+      }
+    }
+    .sticky-table-row {
+      .sticky-table-cell {
+        background: var(--white);
+        padding: 16px 8px;
+        font-size: var(--font-size-xs);
+        vertical-align: middle;
+        width: 100%;
+      }
+      // This is taken from _mixins.scss and is needed because the styles from this sticky table library are very specific and hard to override. With this here, we can have the full range of background colors for our table cells if needed.
+      @each $item in $bgColors {
+        @include generate(
+          bgc,
+          background-color,
+          nth($item, 1),
+          nth($item, 2),
+          ''
+        );
+      }
+    }
+  }
+}
+
+.stickyClasses {
+  :global .sticky-table {
+    .sticky-table-row {
+      .sticky-table-cell {
+        &.last-sticky-cell-left {
+          border-right: 1px solid var(--medium-gray);
+          box-shadow: 8px 0px 5px -2px var(--light-gray);
+        }
+        &.first-sticky-cell-right {
+          border-left: 1px solid var(--medium-gray);
+          box-shadow: -8px 0px 5px -2px var(--light-gray);
+        }
+        &.extra-left-padding {
+          padding-left: 16px;
+        }
+      }
+    }
+  }
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.headerRow {
+  height: 57px; // 57px is the height of the header row
+}
+
+.redFont {
+  color: var(--red);
+}
+
+.darkPurpleFont {
+  color: var(--dark-purple);
+}
+
+.lightBlueBackground {
+  background-color: var(
+    --light-blue
+  ) !important; // important tag overrides base cell styles
+}
+
+.lightRedBackground {
+  background-color: var(
+    --light-red
+  ) !important; // important tag overrides base cell styles
+}
+
+.lighterGrayBackground {
+  background-color: var(
+    --lighter-gray
+  ) !important; // important tag overrides base cell styles
+}
+
+.extraLeftPadding {
+  padding-left: 16px !important; // important tag overrides base cell styles
+}
+
+.topMargin {
+  margin-top: 16px;
+}
+
+.verticalMargin {
+  margin: 16px 0;
+}
+
+.verticalPadding {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.horizontalPadding {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.filtersGap {
+  row-gap: 8px;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.iconColor svg path {
+  fill: var(--blue);
+}
+
+.marginLeftIcon {
+  @extend .iconColor;
+  margin-left: 8px;
+}
+
+.fontWeightSemiBold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.flexDisplay {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 8px;
+}
+
+.selectedHeader {
+  @extend .horizontalPadding;
+  @extend .verticalPadding;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pillTooltip {
+  margin: 10px;
+  padding: 0;
+  padding-inline-start: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  & :global {
+    li {
+      font-size: var(--font-size-xs);
+      margin-bottom: 0;
+      line-height: 16px;
+    }
+  }
+}
+
+.pillTooltipContainer {
+  max-height: 148px;
+  overflow-y: scroll;
+  &,
+  &:after,
+  &:before {
+    border-radius: 4px;
+  }
+  &:after,
+  &:before {
+    content: '';
+    width: calc(100% - 2px);
+    height: 18px;
+    position: absolute;
+    left: 1px;
+  }
+  &:before {
+    background: linear-gradient(
+      to bottom,
+      var(--white) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    top: 1;
+  }
+  &::after {
+    background: linear-gradient(
+      to top,
+      var(--white) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    bottom: 0;
+  }
+}
+
+@mixin bottomGradient {
+  bottom: 20px;
+  height: 20px;
+}
+
+.bottomGradientHeight {
+  @include bottomGradient;
+}
+
+.bottomGradientCustomHeight {
+  bottom: 38px;
+  height: 30px;
+  @supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */
+    @include bottomGradient;
+  }
+}
+
+.bottomGradient {
+  position: relative;
+  transform: rotate(180deg);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0),
+    rgb(255, 255, 255) 100%
+  );
+  z-index: 5;
+}

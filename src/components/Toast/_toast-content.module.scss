@@ -1,0 +1,96 @@
+@import '../../scss/base/variables';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  @media only screen and (min-width: $breakpoint-sm-max) {
+    flex-wrap: wrap;
+  }
+}
+
+.textAndIconContainer {
+  display: flex;
+  gap: 8px;
+}
+
+.iconStyles {
+  align-items: flex-start;
+}
+
+.iconGreen svg path {
+  fill: var(--green);
+}
+
+.iconRed svg path {
+  fill: var(--red);
+}
+
+.iconBlue svg path {
+  fill: var(--blue);
+}
+
+.iconDarkYellow svg path {
+  fill: var(--dark-yellow);
+}
+
+.text {
+  font-size: 14px;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  text-decoration: underline;
+  font-weight: var(--font-weight-regular);
+  transition: 0.25s color ease-in-out;
+  white-space: nowrap;
+  text-transform: uppercase;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+    background: none;
+    text-decoration: underline;
+  }
+}
+.error {
+  color: var(--red);
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--dark-red);
+  }
+}
+.info {
+  color: var(--blue);
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--dark-blue);
+  }
+}
+.warning {
+  color: var(--dark-yellow);
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--chart-dark-1-yellow);
+  }
+}
+.success {
+  color: var(--green);
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--dark-green);
+  }
+}

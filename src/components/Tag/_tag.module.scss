@@ -1,0 +1,73 @@
+.tag {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  width: max-content;
+  max-width: 150px;
+  padding: 4px 8px;
+  font-size: var(--font-size-xxs);
+  text-transform: uppercase;
+  border: 1px solid;
+  font-weight: var(--font-weight-lightbold);
+}
+.blue {
+  border-color: var(--chart-standard-blue);
+  color: var(--chart-standard-blue);
+  background: var(--chart-light-6-blue);
+}
+.red {
+  border-color: var(--chart-standard-red);
+  color: var(--chart-standard-red);
+  background: var(--light-red);
+}
+.green {
+  border-color: var(--chart-light-1-green);
+  color: var(--chart-standard-green);
+  background: var(--chart-light-6-green);
+}
+.yellow {
+  border-color: var(--chart-dark-1-yellow);
+  color: var(--chart-dark-3-yellow);
+  background: var(--chart-light-6-yellow);
+}
+.purple {
+  border-color: var(--chart-standard-purple);
+  color: var(--chart-standard-purple);
+  background: var(--chart-light-6-purple);
+}
+.royal-blue {
+  border-color: var(--chart-standard-royal);
+  color: var(--chart-standard-royal);
+  background: var(--chart-light-6-royal);
+}
+.teal {
+  border-color: var(--chart-dark-1-teal);
+  color: var(--chart-dark-1-teal);
+  background: var(--chart-light-6-teal);
+}
+.pink {
+  border-color: var(--chart-standard-pink);
+  color: var(--chart-standard-pink);
+  background: var(--chart-light-6-pink);
+}
+.orange {
+  border-color: var(--chart-standard-orange);
+  color: var(--chart-standard-orange);
+  background: var(--chart-light-6-orange);
+}
+.gray {
+  border-color: var(--purple);
+  color: var(--gray);
+  background: var(--light-purple);
+}
+.light-gray {
+  border-color: var(--medium-gray);
+  color: var(--gray);
+  background: var(--lighter-gray);
+}
+.dark-gray {
+  border-color: var(--gray);
+  color: var(--dark-gray);
+  background: var(--medium-gray);
+}

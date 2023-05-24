@@ -1,0 +1,157 @@
+.caret svg path {
+  stroke: var(
+    --purple
+  ); // Updated color from blue to purple to match with designs
+}
+
+.flipped {
+  transform: rotate(180deg);
+}
+
+.activeColumnContainer {
+  display: grid;
+  grid-template-columns: 1fr 16px;
+  width: 100%;
+  grid-gap: 16px;
+}
+
+.expandedRow {
+  box-shadow: 0 5px 4px -4px var(--button-shadow-color);
+  z-index: 1;
+  position: relative;
+}
+
+.insetShadow {
+  box-shadow: inset 0 -5px 4px -4px var(--button-shadow-color);
+}
+
+.isButton {
+  display: flex;
+  justify-content: center;
+}
+
+.hideColumn {
+  display: none;
+}
+
+.checkboxRow {
+  display: grid;
+  grid-template-columns: 34px 1fr 40%;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.clear {
+  font-size: var(--font-size-xxs);
+}
+
+.totalRow {
+  position: sticky;
+  z-index: 2;
+  background-color: var(--lighter-gray);
+}
+
+// Mobile Column Picker
+.mainColumnContainer {
+  background-color: var(--faint-gray);
+  padding: 16px;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.boldFont {
+  font-weight: var(--font-weight-bold);
+}
+
+.caratIcon {
+  margin-left: 8px;
+  svg path {
+    fill: var(--purple);
+  }
+}
+
+.select {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+// Mobile Table Header / Mobile Table Row
+.row {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.header {
+  border-bottom: 2px solid var(--purple);
+  position: sticky;
+  // 53px comes from the height of the mobile header. This will be consistent in Predict and Shelf
+  top: 53px;
+  background: var(--white);
+  z-index: 2;
+}
+
+.column {
+  padding: 16px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.activeColumn {
+  border-left: 1px solid var(--light-gray);
+}
+
+.caratContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.infoTooltipIcon {
+  margin-left: 8px;
+  svg path {
+    fill: var(--blue);
+  }
+}
+
+.rightMargin {
+  margin-right: 16px;
+}
+
+.smallRightMargin {
+  margin-right: 8px;
+}
+
+.lighterGrayBackground {
+  background-color: var(--lighter-gray);
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.iconColor svg path {
+  fill: var(--blue);
+}
+
+.marginLeftIcon {
+  @extend .iconColor;
+  margin-left: 8px;
+}
+
+.headerDataPadding {
+  padding: 16px 8px;
+}
+
+.topMargin {
+  margin-top: 16px;
+}

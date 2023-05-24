@@ -1,0 +1,17 @@
+.unsortColumnContainer {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semibold);
+  color: var(--purple);
+  font-size: var(--font-size-xs);
+  padding-right: 24px;
+}
+
+.iconStyles {
+  margin-left: 8px;
+  svg path {
+    fill: var(--blue);
+  }
+}

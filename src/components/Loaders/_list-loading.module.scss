@@ -1,0 +1,33 @@
+@import '../../scss/base/mixins';
+@import '../../scss/base/animations';
+
+.listLoading {
+  padding-left: 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-gap: var(--custom-grid-gap);
+  &.longList {
+    .innerSpan {
+      animation-duration: 2s !important;
+    }
+  }
+}
+
+.listLoadingRow {
+  &:last-child {
+    transition: none;
+    border-bottom-color: transparent;
+  }
+  &:global(.animated) {
+    animation-duration: 0.5s;
+  }
+}
+
+.innerSpan {
+  height: var(--custom-height);
+  @include border-radius(2px);
+  background: var(--light-gray);
+  display: flex;
+  width: 100%;
+  animation: fadify 1s infinite;
+}

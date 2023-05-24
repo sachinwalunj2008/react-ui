@@ -1,0 +1,78 @@
+@import '../../scss/base/variables';
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.header,
+.options {
+  border: none;
+  background: none;
+  padding: 0;
+  min-width: auto;
+  height: auto;
+}
+
+.header {
+  font-weight: var(--font-weight-semibold);
+  color: var(--purple);
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  &.active {
+    color: var(--dark-purple);
+  }
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.options {
+  text-transform: none;
+  color: var(--dark-purple);
+  transition: color 0.25s ease;
+  white-space: nowrap;
+  line-height: 22px;
+  padding: 4px 0;
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: color 0.25s ease-in-out;
+  font-weight: var(--font-weight-light);
+  &:hover:not(.active) {
+    color: var(--purple);
+  }
+  &.active {
+    color: var(--dark-purple);
+    font-weight: var(--font-weight-semibold);
+  }
+}
+
+.filterContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 16px;
+  &.hasOptions {
+    @media only screen and (min-width: $breakpoint-md) {
+      grid-template-columns: auto 1px auto;
+      grid-template-rows: 1fr;
+    }
+  }
+  .divider {
+    display: none;
+    @media only screen and (min-width: $breakpoint-md) {
+      display: block;
+      background: var(--light-gray);
+      height: 100%;
+      width: 1px;
+    }
+  }
+}
+
+.tippyArrow {
+  padding: 0;
+  &[data-placement^='bottom'] :global {
+    .tippy-arrow::after {
+      border-bottom: 11px solid var(--lighter-gray);
+    }
+  }
+}

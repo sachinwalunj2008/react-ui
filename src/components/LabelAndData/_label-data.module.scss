@@ -1,0 +1,35 @@
+.labelAndData {
+  font-size: var(--font-size-xs);
+  > &:not(.dropdown):not(.custom-h1) {
+    span {
+      font-weight: var(--font-weight-regular);
+    }
+  }
+  span {
+    &.fw-bold {
+      font-weight: var(--font-weight-bold);
+    }
+    &.red {
+      color: var(--red);
+    }
+    &.green {
+      color: var(--green);
+    }
+    &.dark-green {
+      color: var(--dark-green);
+    }
+  }
+  label {
+    display: block;
+    text-transform: uppercase;
+    font-size: var(--font-size-xxs);
+    font-weight: var(--font-weight-light);
+    line-height: initial;
+  }
+  .error {
+    color: var(--red);
+  }
+  .success {
+    color: var(--green);
+  }
+}

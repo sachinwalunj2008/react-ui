@@ -1,0 +1,16 @@
+.downloadLoaderContainer svg path {
+  fill: var(--blue);
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

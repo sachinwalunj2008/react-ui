@@ -1,0 +1,56 @@
+<!--ATTENTION -->
+<!--When updating this file, please add the newest comments at the top of the file so they are displayed first -->
+<!--Changes should include any functional changes made to the component and how that affects the component/function usage -->
+<!--or changes made to the Types (and what effect that will have for the component/function) -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+
+<Meta
+  title='ChangeLog/3.10'
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<!-- INSERT NEW UPDATE HERE -->
+<!-- Include date, version & the change and it's functional effects -->
+
+**07-July-2022**
+
+### 3.10.3
+
+Added an optional prop to `TextInput` called `maxDecimalPlaces`. This will restrict the number of demical places for a number input.
+
+---
+
+**06-July-2022**
+
+### 3.10.2
+
+Added a prop to `PrimaryActionButton` for disabling the secondary action button.
+Changed the logic so an empty actions array still displays the `MenuButton` version as long as the actions prop exists.
+Also added box shadow.
+
+---
+
+### 3.10.1
+
+Added `useIsMounted` hook for general use.
+This will provide a uniform way to verify if a component is mounted before updated the component state.
+
+---
+
+**05-July-2022**
+
+### 3.10.0
+
+Created new `PrimaryActionButton` component, meant to replace `BulkActions`.
+It can be used as either a `MenuButton` or a `Button` that shows up in the bottom right corner of the screen.
+The `MenuButton` version accepts a list of actions that can be individually disabled.
+
+Link to Story: [PrimaryActionButton](/story/components-primaryactionbutton--menu-button)
+
+---

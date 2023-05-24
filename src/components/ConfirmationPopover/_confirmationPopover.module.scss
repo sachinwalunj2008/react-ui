@@ -1,0 +1,43 @@
+.popoverWrapper {
+  font-size: var(--font-size-xs);
+
+  .popoverBody {
+    padding: 16px;
+    border-bottom: 1px solid var(--medium-purple);
+  }
+
+  .popoverFooter {
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.popoverOptionsWrapper {
+  padding: 8px;
+}
+
+.grayArrow:global(.tippy-box[data-placement^='bottom'])
+  :global(.tippy-arrow:after) {
+  border-bottom: 11px solid var(--lighter-gray);
+}
+
+.redArrow:global(.tippy-box[data-placement^='bottom'] .tippy-arrow:after) {
+  border-bottom: 11px solid var(--red);
+}
+
+.greenArrow:global(.tippy-box[data-placement^='bottom'])
+  :global(.tippy-arrow:after) {
+  border-bottom: 11px solid var(--green);
+}
+
+.blueArrow:global(.tippy-box[data-placement^='bottom'])
+  :global(.tippy-arrow:after) {
+  border-bottom: 11px solid var(--blue);
+}

@@ -1,0 +1,12 @@
+.back-to-top-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    margin-bottom: 10px;
+    font-weight: var(--font-weight-regular);
+  }
+  button {
+    white-space: nowrap;
+  }
+}

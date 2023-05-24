@@ -1,0 +1,113 @@
+@import '../../scss/base/mixins';
+
+.styledCheckbox {
+  cursor: pointer;
+  position: relative;
+  height: var(--radio-size);
+  width: var(--radio-size);
+  border: solid var(--medium-gray) 1px;
+  @include border-radius(1px);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.radio {
+    height: var(--radio-size);
+    width: var(--radio-size);
+    border-radius: 100%;
+    border: 1px solid var(--purple);
+  }
+}
+
+.checkboxLabel {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  color: var(--purple);
+  @include user-select;
+}
+
+// style a checkbox that has been tabbed into
+.focus-visible .styledCheckbox {
+  box-shadow: 0 0 0 1px var(--blue);
+}
+
+.checkbox-second-value {
+  background: var(--medium-purple);
+  color: white;
+  border-radius: 50px;
+  font-size: var(--font-size-xxs);
+  height: 16px;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.clickableContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 8px;
+}
+
+.iconWhite svg path {
+  fill: var(--white);
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  &.checked {
+    .clickableContainer {
+      .styledCheckbox {
+        background: var(--blue);
+        border-color: var(--blue);
+        &.radio {
+          border-color: var(--checkbox-color);
+          border-radius: 100%;
+          background-color: var(--checkbox-color);
+        }
+      }
+    }
+  }
+  &.error {
+    .checkboxLabel {
+      color: var(--red);
+      &.checked {
+        font-weight: var(--font-weight-regular);
+      }
+    }
+    .styledCheckbox {
+      border-color: var(--red);
+    }
+  }
+  &.disabled {
+    .clickableContainer {
+      cursor: not-allowed;
+      opacity: 0.5;
+      .styledCheckbox,
+      .checkboxLabel {
+        cursor: not-allowed;
+      }
+    }
+  }
+  .hiddenCheckbox {
+    position: absolute;
+    display: none;
+  }
+  .clickableContainer {
+    cursor: pointer;
+    label {
+      cursor: pointer;
+    }
+  }
+  .hideLabel {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}

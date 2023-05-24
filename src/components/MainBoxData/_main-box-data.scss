@@ -1,0 +1,231 @@
+.main-box-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &.success {
+    h1:not(.custom-h1) {
+      color: var(--green);
+    }
+  }
+  &.error {
+    h1:not(.custom-h1) {
+      color: var(--red);
+    }
+  }
+
+  .icon-figure {
+    display: flex;
+  }
+
+  .figure-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .iconClass {
+    margin-bottom: 5px;
+    margin-left: 15px;
+  }
+  .divider {
+    border-right: 1px solid var(--light-gray);
+    height: 49px;
+    margin-right: 16px;
+  }
+  .mini-divider {
+    border-right: 1px solid var(--medium-gray);
+    height: 18px;
+    align-self: flex-end;
+    margin: 0 10px 5px 10px;
+  }
+  .stat-figures {
+    display: flex;
+    align-items: center;
+    .multiple-stats {
+      position: relative;
+      .stat-figure {
+        border-right: 0;
+        padding: 0;
+        h3 {
+          position: absolute;
+          top: 0;
+          width: max-content;
+        }
+      }
+    }
+    .stat-tooltip-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .tooltip-text {
+      text-transform: uppercase;
+      color: var(--blue);
+      cursor: pointer;
+    }
+    .stat-figure {
+      h1:not(.fw-bold),
+      h3,
+      p {
+        font-weight: var(--font-weight-light);
+      }
+      h1,
+      h3 {
+        margin: 0;
+      }
+      h3 {
+        font-size: var(--font-size-p);
+      }
+      h1 {
+        font-size: 22px;
+        line-height: inherit;
+        margin-top: 4px;
+        &.success {
+          color: var(--green);
+        }
+        &.error {
+          color: var(--red);
+        }
+        &.blue {
+          color: var(--lavender);
+        }
+        &.light-blue {
+          color: var(--medium-blue);
+        }
+      }
+      h3 {
+        color: var(--dark-purple);
+      }
+      .title-spacer {
+        min-height: 18px;
+      }
+      .icon-figure {
+        span.iconClass {
+          &.green {
+            svg {
+              path {
+                fill: var(--green);
+              }
+            }
+          }
+          &.red {
+            svg {
+              path {
+                fill: var(--red);
+              }
+            }
+          }
+          &.blue {
+            svg {
+              path {
+                fill: var(--lavender);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .left-download-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .sub-section > *:not(:last-child) {
+    margin-right: 15px;
+  }
+  .info-tooltip {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    .info {
+      svg {
+        height: 18px;
+        width: 18px;
+      }
+    }
+  }
+  .view-report {
+    color: var(--blue);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: var(--font-size-xs);
+    margin-right: 8px;
+    line-height: 16px;
+  }
+  .marketplace-logo {
+    width: 50px;
+    margin-right: 4px;
+  }
+
+  @media only screen and (max-width: $breakpoint-sm-max) {
+    .stat-figures {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .tooltip-stat {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .tooltip-text {
+        margin-top: 16px;
+      }
+    }
+
+    .stat-figures .stat-figure {
+      padding: 16px 0;
+      h1 {
+        margin-bottom: 0;
+      }
+      h3 {
+        font-size: var(--font-size-xs);
+        margin-bottom: 0;
+      }
+    }
+    .stat-figure:first-child,
+    .multiple-stats .stat-figure:first-child {
+      padding: 0 0 16px;
+    }
+    .stat-figure:last-child {
+      padding: 16px 0 0;
+    }
+
+    .icon-figure {
+      line-height: var(--font-size-tag);
+    }
+
+    .divider {
+      height: unset;
+      align-self: stretch;
+      border-bottom: 1px solid var(--light-gray);
+      margin: 0 -16px;
+    }
+    .mini-divider {
+      margin: 0 10px;
+    }
+
+    &.threepn {
+      .stat-figures {
+        display: grid;
+        grid-template-rows: 1fr 8px 1fr;
+        width: 100%;
+        .divider {
+          border-right: 0;
+          border-bottom: 1px solid var(--light-gray);
+          width: 100%;
+          height: unset;
+        }
+      }
+    }
+    .right-section {
+      display: none;
+    }
+    .multiple-stats {
+      .mini-divider {
+        margin: 0 10px 16px 10px;
+      }
+    }
+  }
+}

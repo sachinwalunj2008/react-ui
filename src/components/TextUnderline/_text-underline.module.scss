@@ -1,0 +1,30 @@
+@import '../../scss/base/mixins';
+
+.container {
+  font-weight: var(--font-weight-bold);
+  font-size: 16px;
+}
+
+.underline {
+  white-space: nowrap;
+  position: relative;
+  padding-bottom: 3px;
+  &::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    @include border-radius;
+    background: var(--dark-purple);
+  }
+}
+
+.small {
+  font-size: 12px;
+}
+
+.regular {
+  font-weight: var(--font-weight-regular);
+}

@@ -1,0 +1,59 @@
+@import '../../scss/base/variables';
+
+.selectedText {
+  white-space: nowrap;
+  font-size: var(--font-size-xs);
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-weight-regular);
+  color: var(--purple);
+  min-width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  @media only screen and (max-width: $breakpoint-sm-max) {
+    /* CSS specific to iOS devices */
+    @supports (-webkit-touch-callout: none) {
+      font-size: 16px;
+    }
+  }
+  &.open {
+    color: var(--dark-purple);
+  }
+}
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.selectBox {
+  // updated to match prototype design
+  height: 22px;
+  border: 1px solid var(--medium-purple);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  gap: 16px;
+  &.open {
+    border-color: var(--blue);
+  }
+}
+
+.popoverToggle {
+  cursor: pointer;
+}
+
+.tippyContainer {
+  padding: 0;
+}
+
+.iconColor svg path {
+  fill: var(--purple);
+}
+
+.exposed {
+  min-width: 240px;
+}

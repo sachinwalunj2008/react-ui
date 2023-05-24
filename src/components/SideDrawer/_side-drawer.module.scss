@@ -1,0 +1,99 @@
+@import '../../scss/base/variables';
+
+.container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  // start OFF the screen, and then we transition into the screen. Prevents the issue of seeing the drawer on first render
+  left: 100%;
+  // have to win out the z-index of the app itself
+  z-index: 1100;
+  background-color: var(--white);
+  transition: transform 250ms ease-in-out;
+  overflow: auto;
+  &.sm {
+    max-width: 448px;
+  }
+  &.lg {
+    max-width: 767px;
+  }
+  box-shadow: 0 3px 6px var(--button-shadow-color);
+
+  // when the drawer state needs to transition, we use the end-status to signal that
+  &[data-drawer-end-status='open'] {
+    transform: translateX(-100%);
+  }
+
+  // only when the drawer state is fully closed (AFTER transition) do we want to hide this visually
+  // otherwise, if we used data-drawer-end-state, then it would immediately be invisible and you wouldn't see the transition
+  &[data-drawer-state='closed'] {
+    visibility: hidden;
+  }
+}
+
+.header {
+  background-color: var(--lighter-gray);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  border-bottom: 1px solid var(--light-gray);
+  min-height: 32px; // If close button is disabled The title header on the drawer looks too short so adding min height to header
+}
+
+.content {
+  overflow: auto;
+  padding: 16px 16px 0 16px;
+}
+
+.topGradient,
+.bottomGradient {
+  height: 16px;
+  background-color: var(--white);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0),
+    rgb(255, 255, 255) 100%
+  );
+  z-index: 5; // Needs to be in front of table elements if a table present
+}
+
+.topGradient {
+  position: fixed;
+  width: calc(100% - 32px);
+}
+
+.bottomGradient {
+  position: sticky;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  border-top: 1px solid var(--light-gray);
+  background: var(--white);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.25);
+  // The z-index for the overlay needs to be lower than the z-index for the drawer itself. The drawer is set to 1100.
+  z-index: 1099;
+  visibility: hidden;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 0;
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}

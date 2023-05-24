@@ -1,0 +1,159 @@
+// Fonts
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+h1 {
+  font-size: var(--font-size-h1);
+  color: var(--dark-purple);
+  line-height: var(--line-height-h1);
+}
+h2 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-light);
+  color: var(--purple);
+  margin-bottom: 32px;
+}
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: 16px;
+}
+p {
+  font-size: var(--font-size-p);
+  line-height: var(--line-height-p);
+  font-weight: var(--font-weight-light);
+  color: var(--dark-purple);
+  margin-bottom: 40px;
+  &:last-of-type {
+    margin: 0;
+  }
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+li {
+  font-size: var(--font-size-p);
+  line-height: var(--line-height-p);
+  font-weight: var(--font-weight-light);
+  color: var(--dark-purple);
+  margin-bottom: 8px;
+}
+label {
+  .required-asterisk {
+    color: var(--red);
+    margin-left: 2px;
+  }
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.no-visibility {
+  visibility: hidden;
+}
+.visibile {
+  visibility: visible;
+}
+
+// Copywrite
+.copywrite {
+  display: flex;
+  font-size: var(--font-size-xxs);
+  justify-content: center;
+  font-weight: var(--font-weight-light);
+  color: var(--purple);
+  @media only screen and (max-width: $breakpoint-sm-max) {
+    display: none;
+  }
+}
+
+// cursor
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.blur-overlay {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+// Box
+.box {
+  background: var(--faint-gray);
+  padding: 16px;
+  border: 1px solid var(--light-gray);
+  @include border-radius;
+}
+
+// Border Helper Classes
+.bdr {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-right-width: 1px;
+  border-right-style: solid;
+  &t {
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+  &b {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  &l {
+    border-left-width: 1px;
+    border-left-style: solid;
+  }
+  &r {
+    border-right-width: 1px;
+    border-right-style: solid;
+  }
+}
+
+// Delay Class Iterator delay-0 through delay-20
+@include iterate;
+
+::-webkit-scrollbar {
+  height: 0;
+  width: 0; /* remove scrollbar space */
+  background: transparent; /* optional: just make scrollbar invisible */
+}
+
+// Header styles
+.header {
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--light-gray);
+  .dropdown-box {
+    max-width: max-content;
+  }
+  @media only screen and (min-width: $breakpoint-md) {
+    padding: 0 20px;
+    height: 72px;
+  }
+}
+
+// Fix for default Chrome browser styles for focus
+:focus-visible {
+  outline: none;
+}

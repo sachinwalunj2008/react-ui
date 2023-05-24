@@ -1,0 +1,30 @@
+.labelText {
+  display: flex;
+  align-items: center;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.errorTextStyle {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--red);
+}
+
+.iconStyle {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+}
+
+.conditionalWrapperFlex {
+  display: flex;
+}
+
+.clearInputValue {
+  visibility: hidden;
+  text-transform: uppercase;
+}

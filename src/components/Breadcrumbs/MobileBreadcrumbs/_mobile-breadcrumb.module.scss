@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 52px; // This height comes from the design and is meant keep a consistent height no matter how many breadcrumbs are available.
+}
+
+.iconColor svg path {
+  fill: var(--purple);
+}
+
+.lIcon {
+  @extend .iconColor;
+  position: relative;
+  left: 1px; // Needed to properly align to the element above it
+}
+
+.arrowLongIcon {
+  border-left: 1px solid var(--light-gray);
+  // height and width to align with the hamburger icon and the designs
+  height: 52px;
+  width: 42px;
+  transform: rotate(180deg);
+  justify-content: center;
+  @extend .iconColor;
+}
+
+.backArrowButton {
+  right: 17px; // To align with the hamburger icon and the design
+  position: relative;
+}
+
+.breadcrumbPositioning {
+  vertical-align: middle;
+  font-size: var(--font-size-xs);
+}
+
+.twoLevelBreadcrumbPosition {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-xs);
+  @extend .breadcrumbPositioning;
+}
+
+.breadcrumbTooltipContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.breadcrumbPosition {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  @extend .breadcrumbPositioning;
+}
+
+.breadcrumbTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-xs);
+}
+
+.breadcrumbTippyTooltip {
+  display: flex;
+  font-size: var(--font-size-xs);
+  align-items: center;
+  cursor: pointer;
+}
+
+.breadcrumbTippyTooltipText {
+  display: contents;
+}
+
+.breadcrumbTippyTooltipInnerContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.leftTooltipTextMargin {
+  margin-left: 8px;
+}
+
+.breadcrumbOptionRow {
+  max-width: unset;
+}

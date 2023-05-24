@@ -1,0 +1,204 @@
+.multiRangePicker {
+  --mrp-first-range-background: var(--chart-light-5-blue);
+  --mrp-second-range-background: var(--chart-light-5-yellow);
+  --mrp-weekday-font-size: 10px;
+  --mrp-month-font-size: 14px;
+
+  :global {
+    .CalendarDay__default {
+      padding: 2px 0;
+    }
+    .CalendarDay__selected {
+      &::before {
+        background: none;
+      }
+      color: var(--dark-purple);
+    }
+
+    .DayPicker_weekHeader_li {
+      font-size: var(--mrp-weekday-font-size);
+    }
+
+    .CalendarMonth_caption {
+      font-size: var(--mrp-month-font-size);
+    }
+  }
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+.outerDayDiv {
+  height: 100%;
+  position: relative;
+}
+
+.backgroundDiv,
+.foregroundDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.backgroundDiv {
+  z-index: 1;
+}
+
+.foregroundDiv {
+  z-index: 2;
+  font-size: var(--mrp-weekday-font-size);
+}
+
+.firstRange .backgroundDivChild {
+  background: var(--mrp-first-range-background);
+}
+
+.firstRangeToSecondRange .backgroundDivChild {
+  background: linear-gradient(
+    90deg,
+    var(--mrp-first-range-background) 50%,
+    var(--mrp-second-range-background) 50%
+  );
+}
+
+.secondRangeToFirstRange .backgroundDivChild {
+  background: linear-gradient(
+    90deg,
+    var(--mrp-second-range-background) 50%,
+    var(--mrp-first-range-background) 50%
+  );
+}
+
+.secondRange .backgroundDivChild {
+  background: var(--mrp-second-range-background);
+}
+
+.bothRangesFirstBeforeSecond .backgroundDivChild {
+  background: linear-gradient(
+    0deg,
+    var(--mrp-second-range-background) 50%,
+    var(--mrp-first-range-background) 50%
+  );
+}
+
+.bothRangesSecondBeforeFirst .backgroundDivChild {
+  background: linear-gradient(
+    0deg,
+    var(--mrp-first-range-background) 50%,
+    var(--mrp-second-range-background) 50%
+  );
+}
+
+.bothRangesFirstStartDate {
+  .backgroundDivLeft {
+    background: var(--mrp-first-range-background);
+  }
+
+  .backgroundDivRight {
+    background: linear-gradient(
+      0deg,
+      var(--mrp-second-range-background) 50%,
+      var(--mrp-first-range-background) 50%
+    );
+  }
+}
+
+.bothRangesSecondStartDate {
+  .backgroundDivLeft {
+    background: var(--mrp-second-range-background);
+  }
+
+  .backgroundDivRight {
+    background: linear-gradient(
+      0deg,
+      var(--mrp-first-range-background) 50%,
+      var(--mrp-second-range-background) 50%
+    );
+  }
+}
+
+.bothRangesFirstEndDate {
+  .backgroundDivLeft {
+    background: linear-gradient(
+      0deg,
+      var(--mrp-second-range-background) 50%,
+      var(--mrp-first-range-background) 50%
+    );
+  }
+
+  .backgroundDivRight {
+    background: var(--mrp-second-range-background);
+  }
+}
+
+.bothRangesFirstEndSecondStartDate {
+  background: linear-gradient(
+    90deg,
+    var(--cdr-second-range-color, var(--orange)) 60%,
+    var(--cdr-first-range-color, var(--blue)) 60%
+  );
+  border-radius: 100%;
+  z-index: 2;
+}
+
+.bothRangesSecondEndFirstStartDate {
+  background: linear-gradient(
+    90deg,
+    var(--cdr-first-range-color, var(--blue)) 60%,
+    var(--cdr-second-range-color, var(--orange)) 60%
+  );
+  border-radius: 100%;
+  z-index: 2;
+}
+
+.bothRangesSecondEndDate {
+  .backgroundDivLeft {
+    background: linear-gradient(
+      0deg,
+      var(--mrp-first-range-background) 50%,
+      var(--mrp-second-range-background) 50%
+    );
+  }
+
+  .backgroundDivRight {
+    background: var(--mrp-first-range-background);
+  }
+}
+
+.secondRangeStartEndDate {
+  background: radial-gradient(
+    circle,
+    var(--cdr-second-range-color, var(--orange)) 60%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
+.firstRangeStartEndDate {
+  background: radial-gradient(
+    circle,
+    var(--cdr-first-range-color, var(--blue)) 60%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
+.firstRangeStartEndDate,
+.secondRangeStartEndDate {
+  height: 100%;
+}
+
+.backgroundDivChild {
+  width: 50%;
+  height: 100%;
+}
+
+.backgroundLeftNone .backgroundDivLeft {
+  background: transparent;
+}
+
+.backgroundRightNone .backgroundDivRight {
+  background: transparent;
+}

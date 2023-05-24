@@ -1,0 +1,43 @@
+.border {
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-p);
+  padding: 0 16px;
+  height: 40px;
+  width: calc(100% - 32px);
+  span {
+    white-space: nowrap;
+  }
+  &:hover {
+    background: var(--light-blue);
+    box-shadow: none;
+  }
+  &.withBorder {
+    &:first-child {
+      border-radius: 4px 4px 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+    }
+  }
+}
+
+.display {
+  display: block;
+}
+
+.displayTippy {
+  overflow-y: scroll;
+  max-height: 240px; // added if we have more options with tippy
+  min-height: 36px; // should match prototype as if we have one option
+  min-width: 254px; // added style if we have small text
+}
+
+.noPadding {
+  padding: 0;
+}

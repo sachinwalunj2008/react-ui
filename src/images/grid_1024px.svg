@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1044 449">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-5 {
+        stroke: #ccc;
+      }
+
+      .cls-12, .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #707070;
+      }
+
+      .cls-3 {
+        fill: #f7f7f7;
+      }
+
+      .cls-10, .cls-4, .cls-6 {
+        fill: #383838;
+        font-family: Helvetica-Light, Helvetica;
+        font-weight: 300;
+      }
+
+      .cls-4 {
+        font-size: 12px;
+      }
+
+      .cls-6 {
+        font-size: 14px;
+      }
+
+      .cls-7 {
+        fill: #707070;
+      }
+
+      .cls-8 {
+        fill: #ccc;
+      }
+
+      .cls-9 {
+        fill: #a8a8a8;
+      }
+
+      .cls-10 {
+        font-size: 16px;
+      }
+
+      .cls-11 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_162" data-name="Group 162" transform="translate(-317 -247)">
+    <g id="Rectangle_434" data-name="Rectangle 434" class="cls-1" transform="translate(602.031 478.77)">
+      <rect class="cls-11" width="358.551" height="170.23"/>
+      <rect class="cls-12" x="0.5" y="0.5" width="357.551" height="169.23"/>
+    </g>
+    <g id="Rectangle_435" data-name="Rectangle 435" class="cls-1" transform="translate(959.031 478.77)">
+      <rect class="cls-11" width="358.551" height="170.23"/>
+      <rect class="cls-12" x="0.5" y="0.5" width="357.551" height="169.23"/>
+    </g>
+    <g id="Rectangle_439" data-name="Rectangle 439" class="cls-1" transform="translate(602.031 311.1)">
+      <rect class="cls-11" width="715.551" height="170.23"/>
+      <rect class="cls-12" x="0.5" y="0.5" width="714.551" height="169.23"/>
+    </g>
+    <g id="Rectangle_426" data-name="Rectangle 426" class="cls-2" transform="translate(361 266)">
+      <rect class="cls-11" width="1000" height="383"/>
+      <rect class="cls-12" x="0.5" y="0.5" width="999" height="382"/>
+    </g>
+    <g id="Rectangle_427" data-name="Rectangle 427" class="cls-3" transform="translate(361 266)">
+      <rect class="cls-11" width="200" height="383"/>
+      <rect class="cls-12" x="0.5" y="0.5" width="199" height="382"/>
+    </g>
+    <text id="_72px" data-name="72px" class="cls-4" transform="translate(960 290)"><tspan x="-13.338" y="0">72px</tspan></text>
+    <text id="_56px" data-name="56px" class="cls-4" transform="translate(582 462)"><tspan x="-13.338" y="0">56px</tspan></text>
+    <text id="_56px-2" data-name="56px" class="cls-4" transform="translate(1338 462)"><tspan x="-13.338" y="0">56px</tspan></text>
+    <g id="Rectangle_432" data-name="Rectangle 432" class="cls-5" transform="translate(397.031 306.359)">
+      <rect class="cls-11" width="126.551" height="305.547"/>
+      <rect class="cls-12" x="0.5" y="0.5" width="125.551" height="304.547"/>
+    </g>
+    <text id="_100_" data-name="100%" class="cls-6" transform="translate(461 464)"><tspan x="-17.899" y="0">100%</tspan></text>
+    <text id="_100_2" data-name="100%" class="cls-6" transform="translate(461 464)"><tspan x="-17.899" y="0">100%</tspan></text>
+    <text id="_60px" data-name="60px" class="cls-4" transform="translate(541 462)"><tspan x="-13.338" y="0">60px</tspan></text>
+    <text id="_55px" data-name="55px" class="cls-4" transform="translate(381 462)"><tspan x="-13.338" y="0">55px</tspan></text>
+    <text id="_72px-2" data-name="72px" class="cls-4" transform="translate(461 290)"><tspan x="-13.338" y="0">72px</tspan></text>
+    <text id="_72px-3" data-name="72px" class="cls-4" transform="translate(460 634)"><tspan x="-13.338" y="0">72px</tspan></text>
+    <rect id="Rectangle_433" data-name="Rectangle 433" class="cls-7" width="3" height="381" transform="translate(362 267)"/>
+    <text id="_5px" data-name="5px" class="cls-4" transform="translate(328 461)"><tspan x="-10.002" y="0">5px</tspan></text>
+    <line id="Line_61" data-name="Line 61" class="cls-2" x2="17" transform="translate(339.5 457.5)"/>
+    <line id="Line_62" data-name="Line 62" class="cls-2" y1="12" transform="translate(361.5 252.5)"/>
+    <line id="Line_63" data-name="Line 63" class="cls-2" y1="52" transform="translate(397.5 252.5)"/>
+    <text id="_60px-2" data-name="60px" class="cls-4" transform="translate(380 256)"><tspan x="-13.338" y="0">60px</tspan></text>
+    <text id="_50_2_col_4_col" data-name="50% 
+2 col, 4 col" class="cls-6" transform="translate(783 557)"><tspan x="-15.953" y="0">50% </tspan><tspan x="-34.244" y="22">2 col, 4 col</tspan></text>
+    <text id="_50_2_col_4_col-2" data-name="50% 
+2 col, 4 col" class="cls-6" transform="translate(1139 557)"><tspan x="-15.953" y="0">50% </tspan><tspan x="-34.244" y="22">2 col, 4 col</tspan></text>
+    <text id="_100_1_col_3_col" data-name="100%
+1 col, 3 col" class="cls-6" transform="translate(959 389)"><tspan x="-17.899" y="0">100%</tspan><tspan x="-34.244" y="22">1 col, 3 col</tspan></text>
+    <rect id="Rectangle_441" data-name="Rectangle 441" class="cls-8" width="12" height="333.55" transform="translate(1305 312.879)"/>
+    <rect id="Rectangle_442" data-name="Rectangle 442" class="cls-9" width="12" height="165.915" transform="translate(960 480.514)"/>
+    <rect id="Rectangle_443" data-name="Rectangle 443" class="cls-8" width="12" height="333.55" transform="translate(603 312.875)"/>
+    <rect id="Rectangle_444" data-name="Rectangle 444" class="cls-8" width="12" height="165.915" transform="translate(947 480.514)"/>
+    <text id="_288px_static" data-name="288px static" class="cls-10" transform="translate(461 692)"><tspan x="-43.576" y="0">288px static</tspan></text>
+  </g>
+</svg>

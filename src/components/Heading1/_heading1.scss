@@ -1,0 +1,41 @@
+h1.custom-h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  color: var(--dark-purple);
+  position: relative;
+  display: inline-block;
+  &.bottom-margin {
+    margin-bottom: 72px;
+  }
+  &.custom-font-size {
+    font-size: unset;
+    line-height: unset;
+  }
+  .header-with-underline {
+    white-space: nowrap;
+    position: relative;
+    padding-bottom: var(--underline-height);
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      height: var(--underline-height);
+      bottom: 0;
+      left: 0;
+      @include border-radius;
+      background: var(--dark-purple);
+    }
+  }
+  &.header-option {
+    font-size: $font-size-p;
+    line-height: var(--line-height-dropdown-active);
+    margin: 0px;
+    .header-with-underline {
+      padding-bottom: 2px;
+      line-height: var(--line-height-dropdown-active);
+      &::after {
+        height: 2px;
+      }
+    }
+  }
+}

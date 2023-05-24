@@ -1,0 +1,14 @@
+[   
+    {
+        "source": "/toggle/<*>",
+        "target": "https://toggle-api.usepredict.com/<*>",
+        "status": "200",
+        "condition": null
+    },
+    {
+        "source": "/staging-toggle/<*>",
+        "target": "https://stage-toggle-api.usepredict.com/<*>",
+        "status": "200",
+        "condition": null 
+    }
+]

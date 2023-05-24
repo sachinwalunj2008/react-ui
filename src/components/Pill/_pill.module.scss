@@ -1,0 +1,35 @@
+.base {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  border-radius: 1000px;
+  width: max-content;
+  padding: 4px 12px;
+  font-size: var(--font-size-xxs);
+  text-transform: uppercase;
+}
+
+.red {
+  background: var(--red);
+}
+
+.blue {
+  background: var(--blue);
+}
+
+.green {
+  background: var(--green);
+}
+
+.purple {
+  background: var(--purple);
+}
+
+.medium-purple {
+  background: var(--medium-purple);
+  color: var(--dark-purple);
+}
+
+.dark-purple {
+  background: var(--dark-purple);
+}

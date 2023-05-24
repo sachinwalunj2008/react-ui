@@ -1,0 +1,274 @@
+// TODO: remove .tooltip-container when toggle is removed
+.tooltip-container {
+  display: inline-block;
+  .tooltip.__react_component_tooltip {
+    max-width: 300px;
+    width: max-content;
+    height: auto;
+    color: var(--dark-purple);
+    border: 1px solid var(--light-gray);
+    padding: 8px;
+    opacity: 1;
+    font-size: var(--font-size-p);
+    line-height: var(--line-height-p);
+    font-weight: var(--font-weight-light);
+    color: var(--dark-purple);
+    @include box-shadow(0, 3px, 6px);
+    @include border-radius;
+    word-break: break-word;
+    &.place-top {
+      &::after {
+        border-top-style: solid !important;
+        border-top-width: 6px !important;
+      }
+      &::before {
+        border-top-color: var(--border-color) !important;
+        border-top-style: solid !important;
+        border-top-width: 8px !important;
+      }
+    }
+    &.place-bottom {
+      &::after {
+        border-bottom-style: solid !important;
+        border-bottom-width: 6px !important;
+      }
+      &::before {
+        border-bottom-color: var(--border-color) !important;
+        border-bottom-style: solid !important;
+        border-bottom-width: 8px !important;
+      }
+    }
+    &.place-left {
+      &::after {
+        border-left-style: solid !important;
+        border-left-width: 6px !important;
+      }
+      &::before {
+        border-left-color: var(--border-color) !important;
+        border-left-style: solid !important;
+        border-left-width: 8px !important;
+      }
+    }
+    &.place-right {
+      &::after {
+        border-right-style: solid !important;
+        border-right-width: 6px !important;
+      }
+      &::before {
+        border-right-color: var(--border-color) !important;
+        border-right-style: solid !important;
+        border-right-width: 8px !important;
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+  &.right {
+    .tooltip.__react_component_tooltip {
+      &.place-top,
+      &.place-bottom,
+      &.place-left,
+      &.place-right {
+        right: 0px;
+        &::after {
+          left: unset;
+          right: 21px;
+        }
+        &::before {
+          left: unset;
+          right: 19px;
+        }
+      }
+    }
+  }
+  &.left {
+    .tooltip.__react_component_tooltip {
+      &.place-top,
+      &.place-bottom,
+      &.place-left,
+      &.place-right {
+        left: 0px;
+        &::after {
+          right: unset;
+          left: 21px;
+        }
+        &::before {
+          right: unset;
+          left: 21px;
+        }
+      }
+    }
+  }
+}
+///////////////////////////////////////////////////////
+
+// copied class .tippy-box to _tooltip.module.sccs will cleanup when PR merged
+
+.tippy-box {
+  height: auto;
+  border: 1px solid var(--light-gray);
+  padding: 10px;
+  opacity: 1;
+  font-size: var(--font-size-p);
+  line-height: var(--line-height-p);
+  font-weight: var(--font-weight-light);
+  color: var(--dark-purple);
+  @include box-shadow(0, 3px, 6px);
+  @include border-radius;
+  word-break: break-word;
+  background: var(--white);
+  &.no-padding {
+    padding: 0;
+  }
+  &[data-placement^='top'],
+  &[data-placement^='bottom'],
+  &[data-placement^='left'],
+  &[data-placement^='right'] {
+    .tippy-arrow {
+      width: 0;
+      height: 0;
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+      }
+    }
+    &.gray-arrow {
+      .tippy-arrow {
+        &:after {
+          border-bottom: 11px solid var(--lighter-gray);
+        }
+      }
+    }
+    &.red-arrow {
+      .tippy-arrow {
+        &:after {
+          border-bottom: 11px solid var(--red);
+        }
+      }
+    }
+    &.green-arrow {
+      .tippy-arrow {
+        &:after {
+          border-bottom: 11px solid var(--green);
+        }
+      }
+    }
+    &.blue-arrow {
+      .tippy-arrow {
+        &:after {
+          border-bottom: 11px solid var(--blue);
+        }
+      }
+    }
+  }
+
+  &.datepicker {
+    padding: 16px;
+    &[data-placement^='left'],
+    &[data-placement^='right'] {
+      .tippy-arrow {
+        &:after {
+          border-bottom: 11px solid transparent;
+        }
+      }
+    }
+    &[data-placement^='bottom'] {
+      .tippy-arrow {
+        &:after {
+          border-bottom: 11px solid var(--white);
+        }
+      }
+    }
+  }
+  &[data-placement^='bottom'] {
+    .tippy-arrow {
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid var(--light-gray);
+      top: -9px;
+      &:after {
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-bottom: 11px solid var(--white);
+        position: absolute;
+        left: -11px;
+        top: 1px;
+      }
+    }
+    &.gray-arrow {
+      .tippy-arrow {
+        &:after {
+          border-bottom: 11px solid var(--lighter-gray);
+        }
+      }
+    }
+  }
+  &[data-placement^='top'] {
+    .tippy-arrow {
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid var(--light-gray);
+      bottom: -9px;
+      &:after {
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+        border-top: 11px solid var(--white);
+        position: absolute;
+        left: -11px;
+        bottom: 1px;
+      }
+    }
+  }
+  &[data-placement^='right'] {
+    .tippy-arrow {
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid var(--light-gray);
+      border-left: none;
+      left: -9px;
+      &:after {
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
+        border-right: 11px solid var(--white);
+        border-left: none;
+        position: absolute;
+        top: -11px;
+        left: 1px;
+      }
+    }
+    &.gray-arrow {
+      .tippy-arrow {
+        &:after {
+          border-right: 11px solid var(--lighter-gray);
+        }
+      }
+    }
+  }
+  &[data-placement^='left'] {
+    .tippy-arrow {
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid var(--light-gray);
+      border-right: none;
+      right: -9px;
+      &:after {
+        border-top: 11px solid transparent;
+        border-bottom: 11px solid transparent;
+        border-left: 11px solid var(--white);
+        border-right: none;
+        position: absolute;
+        top: -11px;
+        right: 1px;
+      }
+    }
+    &.gray-arrow {
+      .tippy-arrow {
+        &:after {
+          border-left: 11px solid var(--lighter-gray);
+        }
+      }
+    }
+  }
+}

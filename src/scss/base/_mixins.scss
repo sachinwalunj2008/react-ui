@@ -1,0 +1,381 @@
+// Animations
+@mixin transition($duration: 0.25s, $property: all, $transition: ease-in-out) {
+  @include prefix(transition, $property $duration $transition);
+}
+
+@mixin animation($name, $timing: 0.5s, $transition: ease-in-out) {
+  @include prefix(animation, $name $timing $transition);
+}
+
+// Content Styling
+@mixin box-shadow(
+  $left: 0px,
+  $top: 2px,
+  $radius: 2px,
+  $inset: 0,
+  $color: var(--button-shadow-color)
+) {
+  @include prefix(box-shadow, $left $top $radius $inset $color);
+}
+
+@mixin border-radius($radius: 4px) {
+  @include prefix(border-radius, $radius);
+}
+
+// Grid
+@mixin grid-columns($repeatNum: 1) {
+  grid-template-columns: repeat($repeatNum, 1fr);
+}
+
+@mixin user-select($select: none) {
+  @include prefix(user-select, $select);
+}
+
+@mixin font-family($font: 'Montserrat', $serif: sans-serif) {
+  font-family: $font, $serif;
+}
+
+// Iterate
+@mixin iterate(
+  $iterateNum: 20,
+  $step: 0.05,
+  $className: 'delay',
+  $property: animation-delay,
+  $childElement: ''
+) {
+  @for $i from 0 through $iterateNum {
+    $num: $i * $step;
+    .#{$className}-#{$i} #{$childElement} {
+      @include prefix(#{$property}, #{$num}s !important);
+    }
+  }
+}
+
+// Prefixes
+@mixin prefix($property, $value, $prefixes: ('moz', 'ms', 'o', 'webkit')) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// Keyframes
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @-ms-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin generate($prefix, $properties, $values, $names: null, $sizeType: null) {
+  // Loop through all of the sizes(we use @for rather than @each, as we want access to the index)
+  @for $i from 1 through length($values) {
+    $size: nth($values, $i);
+    $suffix: px;
+    $name: $size;
+    @if $sizeType != null {
+      $suffix: $sizeType;
+    }
+    @if $names != null {
+      $name: nth($names, $i);
+    }
+    // Create the rule
+    .#{$prefix}-#{$name} {
+      @each $prop in $properties {
+        #{$prop}: #{$size}#{$suffix};
+      }
+    }
+  }
+}
+
+// Example output - ml-24 mt-24, etc
+
+// 8 point grid system
+$sizes: (0, 2, 4, 8, 10, 16, 20, 24, 32, 40, 48, 56, 64, 72);
+
+$margins: (
+  (m, margin, $sizes),
+  (mx, (margin-left, margin-right), $sizes),
+  (my, (margin-top, margin-bottom), $sizes),
+  (ml, margin-left, $sizes),
+  (mt, margin-top, $sizes),
+  (mb, margin-bottom, $sizes),
+  (mr, margin-right, $sizes)
+);
+
+@each $item in $margins {
+  @include generate(nth($item, 1), nth($item, 2), nth($item, 3));
+}
+
+$paddings: (
+  (p, padding, $sizes),
+  (px, (padding-left, padding-right), $sizes),
+  (py, (padding-top, padding-bottom), $sizes),
+  (pl, padding-left, $sizes),
+  (pt, padding-top, $sizes),
+  (pb, padding-bottom, $sizes),
+  (pr, padding-right, $sizes)
+);
+
+@each $item in $paddings {
+  @include generate(nth($item, 1), nth($item, 2), nth($item, 3));
+}
+
+$gaps: (4, 8, 16);
+
+@each $item in $gaps {
+  @include generate(gap, gap, nth($item, 1));
+}
+
+$fontSizes: (
+  8,
+  10,
+  12,
+  14,
+  16,
+  18,
+  20,
+  22,
+  24,
+  26,
+  28,
+  30,
+  32,
+  34,
+  36,
+  38,
+  40,
+  42,
+  44,
+  46,
+  48,
+  50,
+  52,
+  54,
+  56,
+  58,
+  60
+);
+
+@each $item in $fontSizes {
+  @include generate(fs, font-size, nth($item, 1));
+}
+
+$radii: (4, 8, 16, 1000);
+
+@each $item in $radii {
+  @include generate(bdrr, border-radius, nth($item, 1));
+}
+
+$bgColors: (
+  // BLUES
+  (var(--blue), 'blue'),
+  (var(--dark-blue), 'dark-blue'),
+  (var(--medium-blue), 'medium-blue'),
+  (var(--light-blue), 'light-blue'),
+  // GREENS
+  (var(--green), 'green'),
+  (var(--dark-green), 'dark-green'),
+  (var(--medium-green), 'medium-green'),
+  (var(--light-green), 'light-green'),
+  // REDS
+  (var(--red), 'red'),
+  (var(--dark-red), 'dark-red'),
+  (var(--medium-red), 'medium-red'),
+  (var(--light-red), 'light-red'),
+  // YELLOWS
+  (var(--yellow), 'yellow'),
+  (var(--dark-yellow), 'dark-yellow'),
+  (var(--medium-yellow), 'medium-yellow'),
+  (var(--light-yellow), 'light-yellow'),
+  // PURPLES
+  (var(--purple), 'purple'),
+  (var(--dark-purple), 'dark-purple'),
+  (var(--medium-purple), 'medium-purple'),
+  (var(--light-purple), 'light-purple'),
+  // GRAY SCALE
+  (var(--black), 'black'),
+  (var(--dark-gray), 'dark-gray'),
+  (var(--gray), 'gray'),
+  (var(--medium-gray), 'medium-gray'),
+  (var(--light-gray), 'light-gray'),
+  (var(--lighter-gray), 'lighter-gray'),
+  (var(--faint-gray), 'faint-gray'),
+  (var(--white), 'white'),
+  // ADVANCED PALETTE
+  (var(--lavender), 'lavender'),
+  (var(--light-lavender), 'light-lavender'),
+  (var(--orange), 'orange'),
+  (var(--light-orange), 'light-orange'),
+  (var(--pink), 'pink'),
+  (var(--light-pink), 'light-pink'),
+  (var(--teal), 'teal'),
+  (var(--light-teal), 'light-teal'),
+  // CHART BLUES
+  (var(--chart-light-6-blue), 'chart-light-6-blue'),
+  (var(--chart-light-5-blue), 'chart-light-5-blue'),
+  (var(--chart-light-4-blue), 'chart-light-4-blue'),
+  (var(--chart-light-3-blue), 'chart-light-3-blue'),
+  (var(--chart-light-2-blue), 'chart-light-2-blue'),
+  (var(--chart-light-1-blue), 'chart-light-1-blue'),
+  (var(--chart-standard-blue), 'chart-standard-blue'),
+  (var(--chart-dark-1-blue), 'chart-dark-1-blue'),
+  (var(--chart-dark-2-blue), 'chart-dark-2-blue'),
+  (var(--chart-dark-3-blue), 'chart-dark-3-blue'),
+  (var(--chart-dark-4-blue), 'chart-dark-4-blue'),
+  (var(--chart-dark-5-blue), 'chart-dark-5-blue'),
+  // CHART REDS
+  (var(--chart-light-6-red), 'chart-light-6-red'),
+  (var(--chart-light-5-red), 'chart-light-5-red'),
+  (var(--chart-light-4-red), 'chart-light-4-red'),
+  (var(--chart-light-3-red), 'chart-light-3-red'),
+  (var(--chart-light-2-red), 'chart-light-2-red'),
+  (var(--chart-light-1-red), 'chart-light-1-red'),
+  (var(--chart-standard-red), 'chart-standard-red'),
+  (var(--chart-dark-1-red), 'chart-dark-1-red'),
+  (var(--chart-dark-2-red), 'chart-dark-2-red'),
+  (var(--chart-dark-3-red), 'chart-dark-3-red'),
+  (var(--chart-dark-4-red), 'chart-dark-4-red'),
+  (var(--chart-dark-5-red), 'chart-dark-5-red'),
+  // CHART GREENS
+  (var(--chart-light-6-green), 'chart-light-6-green'),
+  (var(--chart-light-5-green), 'chart-light-5-green'),
+  (var(--chart-light-4-green), 'chart-light-4-green'),
+  (var(--chart-light-3-green), 'chart-light-3-green'),
+  (var(--chart-light-2-green), 'chart-light-2-green'),
+  (var(--chart-light-1-green), 'chart-light-1-green'),
+  (var(--chart-standard-green), 'chart-standard-green'),
+  (var(--chart-dark-1-green), 'chart-dark-1-green'),
+  (var(--chart-dark-2-green), 'chart-dark-2-green'),
+  (var(--chart-dark-3-green), 'chart-dark-3-green'),
+  (var(--chart-dark-4-green), 'chart-dark-4-green'),
+  (var(--chart-dark-5-green), 'chart-dark-5-green'),
+  // CHART YELLOWS
+  (var(--chart-light-6-yellow), 'chart-light-6-yellow'),
+  (var(--chart-light-5-yellow), 'chart-light-5-yellow'),
+  (var(--chart-light-4-yellow), 'chart-light-4-yellow'),
+  (var(--chart-light-3-yellow), 'chart-light-3-yellow'),
+  (var(--chart-light-2-yellow), 'chart-light-2-yellow'),
+  (var(--chart-light-1-yellow), 'chart-light-1-yellow'),
+  (var(--chart-standard-yellow), 'chart-standard-yellow'),
+  (var(--chart-dark-1-yellow), 'chart-dark-1-yellow'),
+  (var(--chart-dark-2-yellow), 'chart-dark-2-yellow'),
+  (var(--chart-dark-3-yellow), 'chart-dark-3-yellow'),
+  (var(--chart-dark-4-yellow), 'chart-dark-4-yellow'),
+  (var(--chart-dark-5-yellow), 'chart-dark-5-yellow'),
+  // CHART PURPLES
+  (var(--chart-light-6-purple), 'chart-light-6-purple'),
+  (var(--chart-light-5-purple), 'chart-light-5-purple'),
+  (var(--chart-light-4-purple), 'chart-light-4-purple'),
+  (var(--chart-light-3-purple), 'chart-light-3-purple'),
+  (var(--chart-light-2-purple), 'chart-light-2-purple'),
+  (var(--chart-light-1-purple), 'chart-light-1-purple'),
+  (var(--chart-standard-purple), 'chart-standard-purple'),
+  (var(--chart-dark-1-purple), 'chart-dark-1-purple'),
+  (var(--chart-dark-2-purple), 'chart-dark-2-purple'),
+  (var(--chart-dark-3-purple), 'chart-dark-3-purple'),
+  (var(--chart-dark-4-purple), 'chart-dark-4-purple'),
+  (var(--chart-dark-5-purple), 'chart-dark-5-purple'),
+  // CHART ROYALS
+  (var(--chart-light-6-royal), 'chart-light-6-royal'),
+  (var(--chart-light-5-royal), 'chart-light-5-royal'),
+  (var(--chart-light-4-royal), 'chart-light-4-royal'),
+  (var(--chart-light-3-royal), 'chart-light-3-royal'),
+  (var(--chart-light-2-royal), 'chart-light-2-royal'),
+  (var(--chart-light-1-royal), 'chart-light-1-royal'),
+  (var(--chart-standard-royal), 'chart-standard-royal'),
+  (var(--chart-dark-1-royal), 'chart-dark-1-royal'),
+  (var(--chart-dark-2-royal), 'chart-dark-2-royal'),
+  (var(--chart-dark-3-royal), 'chart-dark-3-royal'),
+  (var(--chart-dark-4-royal), 'chart-dark-4-royal'),
+  (var(--chart-dark-5-royal), 'chart-dark-5-royal'),
+  // CHART TEALS
+  (var(--chart-light-6-teal), 'chart-light-6-teal'),
+  (var(--chart-light-5-teal), 'chart-light-5-teal'),
+  (var(--chart-light-4-teal), 'chart-light-4-teal'),
+  (var(--chart-light-3-teal), 'chart-light-3-teal'),
+  (var(--chart-light-2-teal), 'chart-light-2-teal'),
+  (var(--chart-light-1-teal), 'chart-light-1-teal'),
+  (var(--chart-standard-teal), 'chart-standard-teal'),
+  (var(--chart-dark-1-teal), 'chart-dark-1-teal'),
+  (var(--chart-dark-2-teal), 'chart-dark-2-teal'),
+  (var(--chart-dark-3-teal), 'chart-dark-3-teal'),
+  (var(--chart-dark-4-teal), 'chart-dark-4-teal'),
+  (var(--chart-dark-5-teal), 'chart-dark-5-teal'),
+  // CHART PINKS
+  (var(--chart-light-6-pink), 'chart-light-6-pink'),
+  (var(--chart-light-5-pink), 'chart-light-5-pink'),
+  (var(--chart-light-4-pink), 'chart-light-4-pink'),
+  (var(--chart-light-3-pink), 'chart-light-3-pink'),
+  (var(--chart-light-2-pink), 'chart-light-2-pink'),
+  (var(--chart-light-1-pink), 'chart-light-1-pink'),
+  (var(--chart-standard-pink), 'chart-standard-pink'),
+  (var(--chart-dark-1-pink), 'chart-dark-1-pink'),
+  (var(--chart-dark-2-pink), 'chart-dark-2-pink'),
+  (var(--chart-dark-3-pink), 'chart-dark-3-pink'),
+  (var(--chart-dark-4-pink), 'chart-dark-4-pink'),
+  (var(--chart-dark-5-pink), 'chart-dark-5-pink'),
+  // CHART ORANGES
+  (var(--chart-light-6-orange), 'chart-light-6-orange'),
+  (var(--chart-light-5-orange), 'chart-light-5-orange'),
+  (var(--chart-light-4-orange), 'chart-light-4-orange'),
+  (var(--chart-light-3-orange), 'chart-light-3-orange'),
+  (var(--chart-light-2-orange), 'chart-light-2-orange'),
+  (var(--chart-light-1-orange), 'chart-light-1-orange'),
+  (var(--chart-standard-orange), 'chart-standard-orange'),
+  (var(--chart-dark-1-orange), 'chart-dark-1-orange'),
+  (var(--chart-dark-2-orange), 'chart-dark-2-orange'),
+  (var(--chart-dark-3-orange), 'chart-dark-3-orange'),
+  (var(--chart-dark-4-orange), 'chart-dark-4-orange'),
+  (var(--chart-dark-5-orange), 'chart-dark-5-orange')
+);
+
+@each $item in $bgColors {
+  @include generate(bgc, background-color, nth($item, 1), nth($item, 2), '');
+}
+
+@each $item in $bgColors {
+  @include generate(fc, color, nth($item, 1), nth($item, 2), '');
+}
+
+@each $item in $bgColors {
+  @include generate(bdrc, border-color, nth($item, 1), nth($item, 2), '');
+}
+
+// CANNOT APPLY GRADIENT TO BACKGROUND-COLOR, HAS TO BE BACKGROUND
+$bgGradients: ((var(--white-gradient-color), 'white-gradient'));
+
+@each $item in $bgGradients {
+  @include generate(bgc, background, nth($item, 1), '');
+}
+
+$fontWeights: (
+  (var(--font-weight-light), 'light'),
+  (var(--font-weight-regular), 'regular'),
+  (var(--font-weight-lightbold), 'light-bold'),
+  (var(--font-weight-semibold), 'semi-bold'),
+  (var(--font-weight-bold), 'bold'),
+  (var(--font-weight-extra-bold), 'extra-bold')
+);
+
+@each $item in $fontWeights {
+  @include generate(fw, font-weight, nth($item, 1), nth($item, 2), '');
+}
+
+@mixin add-css-variable($name, $value) {
+  $prefix: '--';
+  #{$prefix + $name}: $value;
+}

@@ -1,0 +1,20 @@
+.color-swatch-group {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  .color-swatch {
+    height: 48px;
+    width: 48px;
+    @include border-radius;
+    &.has-border {
+      border: 1px solid var(--light-gray);
+    }
+  }
+  .color-swatch-hex {
+    color: var(--purple);
+    font-size: var(--font-size-h3);
+  }
+}

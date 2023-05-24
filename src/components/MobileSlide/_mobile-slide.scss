@@ -1,0 +1,115 @@
+.App {
+  .mobile-slide {
+    background: var(--lighter-gray);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    animation-duration: 0.5s;
+    .arrow-icon {
+      transform: rotate(90deg);
+    }
+    // Sidebar
+    .sidebar {
+      height: calc(100vh - 25px);
+      width: 32px;
+      padding: 25px 40px 0 0;
+      flex-direction: column;
+      overflow: auto;
+      align-items: flex-start;
+      &.is-webkit {
+        height: calc(100vh - 105px);
+      }
+      &::-webkit-scrollbar {
+        width: 0px; /* remove scrollbar space */
+        background: transparent;
+      }
+      &.expanded {
+        width: calc(100% - 40px);
+        .sidebar-links {
+          padding-left: 4px;
+        }
+        .menu-item {
+          .menu-item-text {
+            display: block;
+          }
+        }
+        .sidebar-links::before {
+          width: auto;
+        }
+      }
+      .top-border-bar {
+        display: none;
+      }
+      .sidebar-links-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-left: 20px;
+        position: relative;
+      }
+      .sidebar-accent-background {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: var(--medium-gray);
+        z-index: 10;
+        width: 5px;
+      }
+
+      .sidebar-active-bar {
+        height: 48px;
+        width: 5px;
+        background: var(--dark-purple);
+        position: absolute;
+        @include transition(0.5s);
+        @include border-radius(100px);
+        left: 0;
+        z-index: 99;
+      }
+      .sidebar-links-container {
+        display: block;
+      }
+      // TODO - clean up the old .sidebar-footer from Predict and Shelf
+      &.mobile-sidebar-menu {
+        .sidebar-footer {
+          margin: 0 auto;
+          .popover {
+            display: block;
+            .select-box {
+              .left-icon {
+                margin-left: 10px;
+                margin-right: 20px;
+              }
+              .selected-text {
+                min-width: calc(100% - 80px);
+                text-transform: uppercase;
+                font-size: 12px;
+              }
+              .carat {
+                .carat {
+                  transform: rotate(-90deg);
+                }
+                &.up {
+                  .carat {
+                    transform: rotate(-180deg);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+}

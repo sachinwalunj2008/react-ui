@@ -1,0 +1,14 @@
+.optionRow {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 32px;
+  padding: 0 16px;
+  span {
+    white-space: nowrap;
+  }
+  &:hover {
+    background: var(--light-blue);
+    box-shadow: none;
+  }
+}

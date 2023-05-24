@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "bugfixes": true
+      }
+    ],
+    "@babel/react",
+    "@babel/typescript"
+  ],
+  "plugins": ["@babel/plugin-proposal-class-properties", "dynamic-import-node"]
+}

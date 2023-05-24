@@ -1,0 +1,15 @@
+@import '../scss/base/variables';
+
+.standardLayout {
+  display: grid;
+  grid-gap: 32px;
+  @media only screen and (min-width: $breakpoint-md) {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+}

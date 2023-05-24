@@ -1,0 +1,288 @@
+<!--ATTENTION -->
+<!--When updating this file, please add the newest comments at the top of the file so they are displayed first -->
+<!--Changes should include any functional changes made to the component and how that affects the component/function usage -->
+<!--or changes made to the Types (and what effect that will have for the component/function) -->
+
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+
+<Meta
+  title='ChangeLog/3.28'
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+<!-- INSERT NEW UPDATE HERE -->
+<!-- Include date, version & the change and it's functional effects -->
+
+**10-April-2023**
+
+### 3.28.26
+
+Added the `columnHeaderSubContent` prop to the config of `StandardTable`. This will allow custom JSX to be added to the right of the column headers.
+
+---
+
+**07-April-2023**
+
+### 3.28.25
+
+Removing the prop `textInsteadOfIcon` from `Checkbox` as it is unnecessary. The prop is not being used in any app.
+
+[Checkbox](/story/components-formcomponents-checkbox--radio)
+
+---
+
+**05-April-2023**
+
+### 3.28.24
+
+We have fundamental UI changes to the `SearchBar`. We believe that the extra space will help us from avoiding the placeholder text being cutoff.
+
+[SearchBar](/story/components-searchbar--basic)
+
+Removing the `tooltip` prop from `SearchBar`. We realized that it does not follow any convention cleanly.
+
+[SearchBar - Long Placeholder](/story/components-searchbar--with-long-placeholder)
+
+Added `minWidth` prop to `SearchBar` to optionally change the minimum width of the input.
+
+[SearchBar - Min Width](/story/components-searchbar--min-width-override)
+
+---
+
+**04-April-2023**
+
+### 3.28.23
+
+Added a new prop to HeaderMetric called `metricTooltip` to display tooltip when hovering over the metric values.
+
+---
+
+**28-Mar-2023**
+
+### 3.28.22
+
+Created `DEBOUNCE_STANDARD_TIME` to be used for our debounce values. This value is set to 250. The value represent milliseconds. This is now exported and can be used for our apps.
+
+---
+
+**28-Mar-2023**
+
+### 3.28.21
+
+Update `SparklineWithTooltip` with the ability to have custom x-axis Display
+format. Most common use case would be to display hours instead of date. Default
+format is `MMM D` but hours could use `h:mm a` for a.m./p.m. format. Allows for
+any Moment time/date formatting.
+[SparklineWithTooltip](/story/components-charts-sparkline-with-tooltip--hourly-display)
+
+Also added the ability to hide the sparkline preview graph but retain the
+tooltip version of the graph. Use `hideSparklinePreview === true` and only the
+`View` clickable link will be visible.
+[SparklineWithTooltip](/story/components-charts-sparkline-with-tooltip--no-preview)
+
+---
+
+**23-Mar-2023**
+
+### 3.28.20
+
+Using `headerMetricProp` object for all header metric related params in
+SparklineWithTooltip component.
+
+[SparklineWithTooltip](/story/components-charts-sparkline-with-tooltip--default)
+
+---
+
+**22-Mar-2023**
+
+### 3.28.19
+
+Adding HeaderMetric component to SparklineWithTooltip to enhance the tooltip
+display with core metric data.
+
+[SparklineWithTooltip](/story/components-charts-sparkline-with-tooltip--default)
+
+### 3.28.18
+
+Adding `TextUnderline` to module.ts. This component is not new, but we forgot to add it to the module to allow apps to use this component.
+
+[TextUnderline](/story/components-textunderline--basic)
+
+### 3.28.17
+
+Removing `NoListData`. Officially deprecated.
+
+---
+
+**20-Mar-2023**
+
+### 3.28.16
+
+1. Added a prop `appendTo` to the `MultipleSelection` component. This would be needed if it is going to be inside another component making use of Tippy. Otherwise it will be attached to the body and wont be interactive.
+
+   [MultipleSelection](/story/components-formcomponents-multiselect-multipleselection--basic)
+
+2. The `value` in the prop `activeFilters` of `StandardTable` or `CheckboxTable` will now also accept array of strings or numbers. These will be displayed in a Tooltip.
+
+   [TableFilter](/story/components-tables-components-tablefilter--table-filter-with-list)
+
+---
+
+### 3.28.15
+
+Refactored the SparklineWithTooltip component to add another tooltip when hovering over the
+individual data points.
+
+[SparklineWithTooltip](/story/components-charts-sparkline-with-tooltip--default)
+
+### 3.28.14
+
+Added an optional `autoFocus` prop to `SearchBar`. We can also pass in a `ref` as a prop to easily target the `SearchBar` if needed.
+
+[SearchBar](/story/components-searchbar--basic)
+
+---
+
+**16-Mar-2023**
+
+### 3.28.13
+
+Added a `debounce` prop to `SearchBar`. This is an optional prop that will delay the `TextInput` callout by the specified debounce time (in milliseconds).
+
+[SearchBar](/story/components-searchbar--debounce)
+
+---
+
+**8-Mar-2023**
+
+### 3.28.12
+
+Added `imgStyle` to the `ProductImage` component to override the inline styles if needed.
+
+Added `placeholder` prop to `SearchBar` to pass in an optional search placeholder.
+
+[SearchBar](/story/components-searchbar--with-placeholder)
+
+---
+
+**3-Mar-2023**
+
+### 3.28.11
+
+Added the ability to have subtabs for the mobile `Tabs` experience. A `subrows` prop has been added to the `Tabs` props. This will only affect the mobile version and will have no impact on the desktop version.
+
+[Tabs](/story/components-tabs-tabs--tabs-with-subtabs)
+
+---
+
+**2-Mar-2023**
+
+### 3.28.10
+
+Added a mobile verions for `Tabs`. This is the same design as `RouterTabs` in mobile.
+
+[Tabs](/story/components-tabs-tabs--basic)
+
+---
+
+**2-Mar-2023**
+
+### 3.28.9
+
+Adding a `noBorder` prop to `ToggleOptions` to remove the border styles.
+
+[ToggleOptions](/story/components-formcomponents-toggleoptions--no-border)
+
+---
+
+**1-Mar-2023**
+
+### 3.28.8
+
+Removing `customIcon` and `noMargin` props from `Checkbox`.
+
+[SideDrawer](/story/components-formcomponents-checkbox--standard)
+
+---
+
+**28-Feb-2023**
+
+### 3.28.7
+
+Removing `noPadding` and `noTopPadding` props from `SideDrawer`.
+
+[SideDrawer](/story/components-sidedrawer--basic)
+
+---
+
+**28-Feb-2023**
+
+### 3.28.6
+
+Updated the `CustomTable` prop `noDataFields` to be `EmptyStateProps` since we replaced `NoListData` with `EmptyState` in the `CustomTable`.
+
+---
+
+**24-Feb-2023**
+
+### 3.28.5
+
+Added new prop `style` in the cell config in `StandardTable` component to handle cell specific styles
+Added new prop `className` in the `UnsortedColumn` component to apply column style
+
+---
+
+**23-Feb-2023**
+
+### 3.28.4
+
+The requirements for the active breadcrumb length has changed. We no longer want to truncate the active breadcrumb. We removed the `activeCrumbCharLimit` from NewBreadcrumbs.
+
+[NewBreadcrumbs](/story/components-breadcrumbs-newbreadcrumbs--character-limit)
+
+---
+
+**17-Feb-2023**
+
+### 3.28.3
+
+Added new props in PrimaryActionButton to handle the PopoverWithConfirmation
+
+[PrimaryActionButton](/story/components-primaryactionbutton-popoverwithconfirmation--menu-button-as-confirmation)
+
+---
+
+**15-Feb-2023**
+
+### 3.28.2
+
+Added an optional `activeCrumbCharLimit` to NewBreadcrumbs. This will influence only the current breadcrumb and override `characterLimit`.
+
+[NewBreadcrumbs](/story/components-breadcrumbs-newbreadcrumbs--character-limit)
+
+---
+
+**14-Feb-2023**
+
+### 3.28.1
+
+Added an optional `subtabs` prop to `Tab`. This is used to update Pill color for basic tabs and subtabs.
+
+[Tabs](/docs/components-tabs-tabs--sub-tabs-with-pill)
+
+---
+
+**07-Feb-2023**
+
+### 3.28.0
+
+Revamped Breadcrumbs. We will temporarily have a `NewBreadcrumbs` component until all apps are updated with it. Once that is done, this component will be renamed to `Breadcrumbs` and the old component will be removed.
+
+[NewBreadcrumbs](/docs/components-breadcrumbs-newbreadcrumbs--basic)
+
+---

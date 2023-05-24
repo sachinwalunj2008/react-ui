@@ -1,0 +1,70 @@
+$stepper-height: 4px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.topRowGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 52px;
+  &.hasBackButton {
+    grid-template-columns: 52px 1fr;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  color: var(--purple);
+  font-size: var(--font-size-xxs);
+  padding: 8px 16px;
+  text-transform: uppercase;
+  &.hasBackButton {
+    border-left: 1px solid var(--light-gray);
+  }
+}
+
+.title {
+  font-weight: var(--font-weight-bold);
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: repeat(var(--steps), 1fr);
+  gap: 2px;
+}
+
+.step {
+  height: $stepper-height;
+  background: var(--light-gray);
+}
+
+.highlighted,
+.activePlaceholder {
+  height: $stepper-height;
+  background: var(--blue);
+}
+
+.activePlaceholder {
+  width: 0;
+  &.active {
+    width: 100%;
+  }
+}
+
+.highlighted {
+  width: 100%;
+}
+
+.iconStyles {
+  transform: rotate(180deg);
+  justify-content: center;
+  svg path {
+    fill: var(--purple);
+  }
+}

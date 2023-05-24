@@ -1,0 +1,44 @@
+.mobileRowContainer {
+  display: block;
+  width: calc(100% - 16px);
+  font-size: var(--font-size-xs);
+}
+
+.activeMobileRow {
+  font-weight: var(--font-weight-semibold);
+  background: var(--light-blue);
+}
+
+.verticalPadding {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.horizontalPadding {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.optionRow {
+  @extend .verticalPadding;
+  @extend .horizontalPadding;
+  display: flex;
+  text-transform: capitalize;
+}
+
+.leftMargin {
+  margin-left: 4px;
+}
+
+.iconL {
+  margin-right: 8px;
+  svg path {
+    fill: var(--purple);
+  }
+}
+
+.subrowOptionIcon {
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="8.667" viewBox="0 0 16 8.667">
+  <g id="Group_2" data-name="Group 2" transform="translate(-1134 -362)">
+    <g id="Group_1" data-name="Group 1">
+      <path id="mouse" d="M4.333,16A4.386,4.386,0,0,1,0,11.583V4.417A4.386,4.386,0,0,1,4.333,0,4.386,4.386,0,0,1,8.667,4.417v7.15A4.39,4.39,0,0,1,4.333,16ZM8,4.417A3.717,3.717,0,0,0,4.333.667,3.717,3.717,0,0,0,.667,4.417v7.15a3.721,3.721,0,0,0,3.667,3.767A3.717,3.717,0,0,0,8,11.583Z" transform="translate(1150 362) rotate(90)" fill="#8184a9"/>
+      <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1135.5 363.5)" fill="#8184a9" stroke="#8184a9" stroke-width="1">
+        <circle cx="2.75" cy="2.75" r="2.75" stroke="none"/>
+        <circle cx="2.75" cy="2.75" r="2.25" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

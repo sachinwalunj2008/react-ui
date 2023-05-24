@@ -1,0 +1,83 @@
+@import '../../../../scss/base/mixins';
+
+$bottom-bar-height: 5px;
+
+.routertabsBottomBar {
+  border-radius: $bottom-bar-height;
+  background-color: var(--medium-purple);
+  margin-bottom: 20px;
+  width: 100%;
+  height: $bottom-bar-height;
+  position: relative;
+  overflow: hidden;
+}
+
+.routertabsBottomBarActive {
+  border-radius: $bottom-bar-height;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--dark-purple);
+  height: $bottom-bar-height;
+  transform-origin: left;
+}
+
+.routertabsSubtabs {
+  position: relative;
+  height: 27px;
+  margin-bottom: 20px;
+  .routertabsLink {
+    font-size: var(--font-subtab);
+    padding: 8px 10px;
+  }
+  .routertabsLinkHasTag {
+    padding: 8px 2px 8px 10px;
+    margin-right: 8px;
+  }
+  // TODO: After all apps are updated to react-router-dom v6, we will remove the old .routertabs-link-active class. We need to keep both for now.
+  .routertabsLinkActive,
+  .routertabsLink.active {
+    color: var(--white);
+    font-weight: var(--font-weight-semibold);
+    transition: color 500ms ease-in-out;
+  }
+}
+
+.routertabsSubtabsActive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--purple);
+  @include border-radius(100px);
+  transform-origin: left;
+}
+
+.routertabsLink {
+  // TODO: After all apps are updated to react-router-dom v6, we will remove the old .routertabs-link-active class. We need to keep both for now.
+  &:hover:not(.routertabsLinkActive):not(.active) {
+    color: var(--blue);
+  }
+  padding: 16px 24px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--purple);
+  white-space: nowrap;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+// TODO: After all apps are updated to react-router-dom v6, we will remove the old .routertabs-link-active class. We need to keep both for now.
+.routertabsLinkActive {
+  font-weight: var(--font-weight-bold);
+  color: var(--dark-purple);
+}
+
+.routertabsNavContainer {
+  display: flex;
+  align-items: center;
+}

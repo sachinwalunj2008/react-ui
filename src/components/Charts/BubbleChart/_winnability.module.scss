@@ -1,0 +1,53 @@
+// TODO: update static values to use dynamic vars
+
+.tooltip_container {
+  height: 120px; // To align tooltip header and subtitles in tooltip container
+  width: 250px;
+  background-color: var(--white);
+  font-size: 12px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--faint-gray);
+  padding: 0 16px 16px;
+}
+.heading {
+  font-size: 12px;
+  line-height: 52px;
+  font-weight: 700;
+}
+.header_with_underline {
+  white-space: nowrap;
+  position: relative;
+  padding-bottom: 6px;
+  color: var(--dark-purple);
+}
+.header_with_underline::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  border-radius: 4px;
+}
+.header_with_underline.purple::after {
+  background: var(--medium-purple);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding-top: 8px;
+}
+.value {
+  font-weight: 600;
+}
+.xTicks {
+  font-size: 10px;
+  color: var(--dark-purple);
+}
+.yTicks {
+  fill: var(--dark-purple);
+  font-size: 10px;
+}

@@ -1,0 +1,16 @@
+.footerContentStyle {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.childStyle {
+  padding: 16px;
+}
+
+.footerChildStyle {
+  @extend .childStyle;
+  display: flex;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-color: var(--light-gray);
+}

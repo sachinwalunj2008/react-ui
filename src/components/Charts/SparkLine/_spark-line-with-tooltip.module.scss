@@ -1,0 +1,92 @@
+@import '../../../scss/base/variables';
+
+.alignCenter {
+  display: flex;
+  align-items: center;
+}
+
+.chartSpacing {
+  padding: 24px 16px;
+  border: 1px solid var(--light-gray);
+  border-width: 0 1px 0 0;
+  @media only screen and (max-width: $breakpoint-md) {
+    border-width: 0 0 1px 0;
+  }
+}
+
+.displayDataPoint {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+}
+
+.fs12 {
+  font-size: 12px;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.justifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.line {
+  height: 4px;
+  border-radius: 3px;
+  width: 24px;
+  margin-right: 8px;
+}
+
+.miniChartContainer {
+  text-align: left;
+  cursor: pointer;
+}
+
+.noPadding {
+  padding: 0px;
+}
+
+.titleText {
+  font-size: var(--font-size-p);
+  font-weight: var(--font-weight-light);
+}
+
+.tooltipBodyContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% auto;
+  @media only screen and (max-width: $breakpoint-md) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.tooltipPopoverContainer {
+  width: 500px;
+  @media only screen and (max-width: $breakpoint-md) {
+    width: 100%;
+    border: 1px solid var(--light-gray);
+  }
+}
+
+.tooltipPopoverHeader {
+  align-items: center;
+  background-color: var(--lighter-gray);
+  border-bottom: 1px solid var(--light-gray);
+  border-radius: 4px 4px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tooltipStats {
+  color: var(--dark-purple);
+  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+}

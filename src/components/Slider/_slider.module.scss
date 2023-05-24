@@ -1,0 +1,39 @@
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--medium-gray);
+  outline: none;
+  flex-grow: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50px;
+  background: var(--blue);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50px;
+  background: var(--blue);
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 25px;
+  align-items: center;
+  gap: 8px;
+}
+
+.value {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-p);
+  text-align: right;
+}

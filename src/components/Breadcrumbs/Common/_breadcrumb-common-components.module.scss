@@ -1,0 +1,48 @@
+@import '../../../scss/base/variables';
+@import '../../../scss/base/mixins';
+
+.arrow {
+  border: solid var(--dark-purple);
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 2px;
+  transform: rotate(-45deg);
+}
+
+.flexBase {
+  display: flex;
+  gap: 8px;
+}
+
+.breadcrumbPopoverContainer {
+  @extend .flexBase;
+  flex-direction: column;
+}
+
+.popoverOption {
+  @extend .flexBase;
+  align-items: baseline;
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  @media only screen and (min-width: $breakpoint-md) {
+    line-height: 12px;
+    padding: 8px;
+    @include transition;
+    &:hover {
+      background: var(--light-blue);
+    }
+  }
+}
+
+.popoverOptionText {
+  display: contents;
+}
+
+.lIcon {
+  svg path {
+    fill: var(--purple);
+  }
+  position: relative;
+  left: 1px; // Needed to properly align to the element above it
+  top: -1px; // Needed to be centered with the content to the right. This is due to the `align-items: baseline` from above.
+}

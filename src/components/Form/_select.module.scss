@@ -1,0 +1,28 @@
+.textTransform {
+  text-transform: uppercase;
+}
+
+.selectHeaderStyle {
+  display: flex;
+  align-items: center;
+  background-color: var(--faint-gray);
+}
+
+.positionRelative {
+  position: relative;
+}
+
+.searchChange {
+  visibility: hidden;
+  @extend .textTransform;
+}
+
+.secondaryValue {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.borderRadius {
+  border-radius: 4px;
+}

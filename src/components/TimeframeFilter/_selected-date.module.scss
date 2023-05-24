@@ -1,0 +1,13 @@
+.iconStyle {
+  svg path {
+    fill: var(--purple);
+  }
+}
+.dateDisplay {
+  display: flex;
+  align-items: center;
+  .dateString {
+    margin-left: 8px;
+    font-weight: var(--font-weight-regular);
+  }
+}
