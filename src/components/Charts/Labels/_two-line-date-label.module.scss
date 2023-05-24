@@ -1,8 +1,0 @@
-@import '../../../scss/base/variables';
-
-.label {
-  font-size: var(--font-size-xs);
-  @media only screen and (max-width: $breakpoint-lg-max) and (min-width: $breakpoint-md) {
-    font-size: var(--font-size-xxs);
-  }
-}
